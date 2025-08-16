@@ -24,7 +24,7 @@ const Projects = () => {
       description: 'A user-authenticated web application with semantic, ingredient-based search of over 200,000+ recipes using MongoDB Atlas Search. Built a collaborative filtering recommender using SVD and an HNSW index to serve personalized results in under 100ms. Developed a resilient, multi-service backend by deploying the recommendation model as a distinct Python FastAPI microservice on Google Cloud Run.',
       image: 'https://via.placeholder.com/400x250/1976d2/ffffff?text=PantryChef',
       technologies: ['SvelteKit', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Google Cloud', 'MongoDB Atlas Search', 'FastAPI', 'MLOps'],
-      github: 'https://github.com/NathanStanislavsky/pantrychef',
+      github: 'https://github.com/NathanStanislavsky/RecipeSearch',
       live: 'https://recipe-search-psi.vercel.app/',
       featured: true,
     },
@@ -33,7 +33,7 @@ const Projects = () => {
       description: 'Designed and developed a high-performance chess engine using bitboards capable of calculating 8,000,000 positions/s. Implemented Minimax and Alpha-Beta Pruning algorithms to optimize best move search. Developed advanced features including Transposition hash table, move-ordering, and Quiescence search to improve best move search accuracy.',
       image: 'https://via.placeholder.com/400x250/388e3c/ffffff?text=Chess+Engine',
       technologies: ['C', 'C++', 'Git', 'Bitboards', 'Minimax Algorithm', 'Alpha-Beta Pruning', 'Transposition Tables'],
-      github: 'https://github.com/NathanStanislavsky/chess-engine',
+      github: 'https://github.com/NathanStanislavsky/bitboard',
       live: null,
       featured: true,
     }
