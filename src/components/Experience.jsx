@@ -28,12 +28,7 @@ const Experience = () => {
           Experience
         </Typography>
 
-        {/* Work Experience */}
         <Box sx={{ mb: 6 }}>
-          <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
-            Work Experience
-          </Typography>
-          
           <Grid container spacing={3}>
             {workExperience.map((job, index) => (
               <Grid item xs={12} key={index}>
