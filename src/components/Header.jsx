@@ -54,7 +54,22 @@ const Header = ({ onSectionChange }) => {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1 }}>
+      <AppBar 
+        position="fixed" 
+        sx={{ 
+          zIndex: theme.zIndex.drawer + 1,
+          width: '100vw',
+          left: '-50vw',
+          right: '-50vw',
+          marginLeft: '50vw',
+          marginRight: '50vw',
+          borderRadius: 0,
+          borderTopLeftRadius: 0,
+          borderTopRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          borderBottomRightRadius: 0,
+        }}
+      >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Nathan Stanislavsky
