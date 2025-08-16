@@ -10,6 +10,7 @@ import {
   CardMedia,
   Button,
   Chip,
+  Paper,
   useTheme
 } from '@mui/material';
 import { GitHub, Launch, Code } from '@mui/icons-material';
@@ -135,6 +136,48 @@ const Projects = () => {
             </Grid>
           ))}
         </Grid>
+
+        {/* Skills Section */}
+        <Box sx={{ mt: 8 }}>
+          <Typography variant="h4" gutterBottom align="center" sx={{ mb: 3 }}>
+            Technical Skills
+          </Typography>
+          <Paper elevation={2} sx={{ p: 4, position: 'relative', overflow: 'hidden' }}>
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '4px',
+                background: 'linear-gradient(90deg, #384166, #0B735F, #639D75)',
+              }}
+            />
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
+              {[
+                'Java', 'Python', 'C/C++', 'JavaScript', 'TypeScript', 'HTML/CSS', 'x86 Assembly',
+                'SvelteKit', 'React', 'Node.js', 'Tailwind', 'Pandas', 'NumPy', 'scikit-surprise',
+                'FastAPI', 'FAISS', 'PyMongo', 'Google Cloud SDK', 'MongoDB', 'PostgreSQL',
+                'Prisma ORM', 'Drizzle ORM', 'Git', 'Docker', 'Vercel', 'Sanity CMS'
+              ].map((skill) => (
+                <Chip
+                  key={skill}
+                  label={skill}
+                  variant="outlined"
+                  color="primary"
+                  size="small"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: 'primary.main',
+                      color: 'white',
+                      transform: 'translateY(-2px)',
+                    },
+                  }}
+                />
+              ))}
+            </Box>
+          </Paper>
+        </Box>
       </Container>
     </Box>
   );
