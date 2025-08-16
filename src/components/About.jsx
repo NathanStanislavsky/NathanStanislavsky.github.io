@@ -183,7 +183,7 @@ const About = () => {
                 left: 0,
                 right: 0,
                 height: '4px',
-                background: 'linear-gradient(90deg, #135E4B, #4CB572, #A1D8B5)',
+                background: 'linear-gradient(90deg, #384166, #0B735F, #639D75)',
               }}
             />
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
