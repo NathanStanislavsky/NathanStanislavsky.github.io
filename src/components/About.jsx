@@ -31,7 +31,13 @@ const About = () => {
               mx: 'auto',
               mb: 3,
               fontSize: '3rem',
-              bgcolor: 'primary.main'
+              bgcolor: 'primary.main',
+              border: '4px solid #E3DBA9',
+              boxShadow: '0 8px 32px rgba(11, 115, 95, 0.3)',
+              '&:hover': {
+                transform: 'scale(1.05)',
+                boxShadow: '0 12px 40px rgba(11, 115, 95, 0.4)',
+              },
             }}
           >
             NS
@@ -55,6 +61,13 @@ const About = () => {
               clickable
               variant="outlined"
               onClick={() => window.open('mailto:nathan.stanislavsky16@gmail.com', '_blank')}
+              sx={{
+                '&:hover': {
+                  backgroundColor: 'primary.main',
+                  color: 'white',
+                  transform: 'translateY(-2px)',
+                },
+              }}
             />
             <Chip
               icon={<GitHub />}
@@ -62,6 +75,13 @@ const About = () => {
               clickable
               variant="outlined"
               onClick={() => window.open('https://github.com/NathanStanislavsky', '_blank')}
+              sx={{
+                '&:hover': {
+                  backgroundColor: 'primary.main',
+                  color: 'white',
+                  transform: 'translateY(-2px)',
+                },
+              }}
             />
             <Chip
               icon={<Phone />}
@@ -69,6 +89,13 @@ const About = () => {
               clickable
               variant="outlined"
               onClick={() => window.open('tel:917-670-8953', '_blank')}
+              sx={{
+                '&:hover': {
+                  backgroundColor: 'primary.main',
+                  color: 'white',
+                  transform: 'translateY(-2px)',
+                },
+              }}
             />
           </Box>
         </Box>
@@ -78,7 +105,17 @@ const About = () => {
         {/* About Content */}
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
-            <Paper elevation={2} sx={{ p: 4, height: '100%' }}>
+            <Paper elevation={2} sx={{ p: 4, height: '100%', position: 'relative', overflow: 'hidden' }}>
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '4px',
+                  background: 'linear-gradient(90deg, #384166, #0B735F, #639D75)',
+                }}
+              />
               <Typography variant="h4" gutterBottom>
                 About Me
               </Typography>
@@ -99,7 +136,17 @@ const About = () => {
           </Grid>
           
           <Grid item xs={12} md={6}>
-            <Paper elevation={2} sx={{ p: 4, height: '100%' }}>
+            <Paper elevation={2} sx={{ p: 4, height: '100%', position: 'relative', overflow: 'hidden' }}>
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '4px',
+                  background: 'linear-gradient(90deg, #384166, #0B735F, #639D75)',
+                }}
+              />
               <Typography variant="h4" gutterBottom>
                 Education
               </Typography>
@@ -128,7 +175,17 @@ const About = () => {
           <Typography variant="h4" gutterBottom align="center" sx={{ mb: 3 }}>
             Technical Skills
           </Typography>
-          <Paper elevation={2} sx={{ p: 4 }}>
+          <Paper elevation={2} sx={{ p: 4, position: 'relative', overflow: 'hidden' }}>
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '4px',
+                background: 'linear-gradient(90deg, #135E4B, #4CB572, #A1D8B5)',
+              }}
+            />
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
               {skills.map((skill) => (
                 <Chip
@@ -137,6 +194,13 @@ const About = () => {
                   variant="outlined"
                   color="primary"
                   size="small"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: 'primary.main',
+                      color: 'white',
+                      transform: 'translateY(-2px)',
+                    },
+                  }}
                 />
               ))}
             </Box>

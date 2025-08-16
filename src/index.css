@@ -11,8 +11,9 @@ html {
 body {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fafafa;
+  color: #384166;
+  background: linear-gradient(135deg, #F8F7F2 0%, #F0EDD1 100%);
+  background-attachment: fixed;
 }
 
 #root {
@@ -21,33 +22,68 @@ body {
   flex-direction: column;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with earthy theme */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #F0EDD1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: #639D75;
+  border-radius: 5px;
+  border: 2px solid #F0EDD1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #0B735F;
 }
 
 /* Smooth transitions for interactive elements */
 button, a, .MuiCard-root, .MuiPaper-root {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Focus styles for accessibility */
+/* Focus styles for accessibility with earthy colors */
 button:focus, a:focus, input:focus, textarea:focus {
-  outline: 2px solid #1976d2;
+  outline: 2px solid #639D75;
   outline-offset: 2px;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #E3DBA9;
+  color: #384166;
+}
+
+::-moz-selection {
+  background-color: #E3DBA9;
+  color: #384166;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Responsive typography */
@@ -63,4 +99,22 @@ button:focus, a:focus, input:focus, textarea:focus {
   h3 {
     font-size: 1.5rem !important;
   }
+}
+
+/* Additional earthy styling */
+.earth-gradient {
+  background: linear-gradient(135deg, #384166 0%, #0B735F 50%, #639D75 100%);
+}
+
+.earth-accent {
+  background: linear-gradient(45deg, #639D75, #E3DBA9);
+}
+
+.earth-shadow {
+  box-shadow: 0 4px 20px rgba(11, 115, 95, 0.15);
+}
+
+.earth-border {
+  border: 2px solid #E3DBA9;
+  border-radius: 12px;
 }
