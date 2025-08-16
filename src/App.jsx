@@ -99,7 +99,6 @@ function App() {
             <Projects />
           </Box>
         </Box>
-        
         <Footer />
       </Box>
     </ThemeProvider>

@@ -7,7 +7,7 @@ import {
   Divider,
   useTheme
 } from '@mui/material';
-import { GitHub, LinkedIn, Email } from '@mui/icons-material';
+import { GitHub, Email } from '@mui/icons-material';
 
 const Footer = () => {
   const theme = useTheme();
@@ -21,15 +21,9 @@ const Footer = () => {
       color: '#333'
     },
     {
-      icon: <LinkedIn />,
-      label: 'LinkedIn',
-      url: 'https://linkedin.com/in/nathanstanislavsky',
-      color: '#0077b5'
-    },
-    {
       icon: <Email />,
       label: 'Email',
-      url: 'mailto:nathan@example.com',
+      url: 'mailto:nathan.stanislavsky16@gmail.com',
       color: '#d32f2f'
     }
   ];

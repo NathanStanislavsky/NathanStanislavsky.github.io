@@ -4,47 +4,20 @@ import {
   Container,
   Typography,
   Paper,
-  Grid,
-  Chip
+  Chip,
+  Grid
 } from '@mui/material';
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineOppositeContent
-} from '@mui/lab';
-import { Work, School, Star } from '@mui/icons-material';
+import { Work } from '@mui/icons-material';
 
 const Experience = () => {
   const workExperience = [
     {
-      title: 'Full-Stack Developer',
-      company: 'StartupXYZ',
-      period: '2020 - 2022',
-      description: 'Built and maintained multiple client applications. Collaborated with design and product teams to deliver high-quality features.',
-      technologies: ['React', 'TypeScript', 'Python', 'PostgreSQL', 'Redis'],
-      icon: <Work />
-    },
-    {
-      title: 'Software Engineer Intern',
-      company: 'BigTech Corp',
-      period: '2019 - 2020',
-      description: 'Developed internal tools and contributed to the main product. Learned industry best practices and modern development workflows.',
-      technologies: ['JavaScript', 'Python', 'SQL', 'Git', 'Agile'],
-      icon: <Work />
-    }
-  ];
-
-  const education = [
-    {
-      degree: 'Bachelor of Science in Computer Science',
-      school: 'University of Technology',
-      period: '2016 - 2020',
-      description: 'Graduated with honors. Focused on software engineering, algorithms, and data structures.',
-      icon: <School />
+      title: 'Software Engineering Intern',
+      company: 'DragonGC',
+      period: 'July 2024 – Aug 2024; May 2025 – Aug 2025',
+      location: 'Greenwich, CT',
+      description: "At DragonGC, I enhanced the performance and reliability of the company's core AI platform. My contributions included engineering the integration of Large Language Models (LLMs) to deliver comprehensive compliance insights to users, optimizing the data ingestion pipeline, and executing large-scale data migrations to improve scalability. I also developed a suite of internal tools that empowered non-technical users to validate search results, significantly streamlining their workflow and improving data accuracy.",
+      technologies: ['PostgreSQL', 'DigitalOcean S3', 'AI/ML', 'Error Handling', 'Testing', 'UI Development']
     }
   ];
 
@@ -52,83 +25,59 @@ const Experience = () => {
     <Box sx={{ py: 8 }}>
       <Container maxWidth="lg">
         <Typography variant="h3" component="h2" gutterBottom align="center" sx={{ mb: 6 }}>
-          Experience & Education
+          Experience
         </Typography>
 
         {/* Work Experience */}
         <Box sx={{ mb: 6 }}>
-          <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
+          <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
             Work Experience
           </Typography>
-          <Timeline position="alternate">
-            {workExperience.map((job, index) => (
-              <TimelineItem key={index}>
-                <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
-                  {job.period}
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                  <TimelineDot color="primary">
-                    {job.icon}
-                  </TimelineDot>
-                  {index < workExperience.length - 1 && <TimelineConnector />}
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                  <Paper elevation={3} sx={{ p: 3 }}>
-                    <Typography variant="h6" component="span">
-                      {job.title}
-                    </Typography>
-                    <Typography variant="subtitle1" color="primary" gutterBottom>
-                      {job.company}
-                    </Typography>
-                    <Typography variant="body2" paragraph>
-                      {job.description}
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                      {job.technologies.map((tech) => (
-                        <Chip
-                          key={tech}
-                          label={tech}
-                          size="small"
-                          variant="outlined"
-                          color="secondary"
-                        />
-                      ))}
-                    </Box>
-                  </Paper>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </Box>
-
-        {/* Education */}
-        <Box sx={{ mb: 6 }}>
-          <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
-            Education
-          </Typography>
+          
           <Grid container spacing={3}>
-            {education.map((edu, index) => (
-              <Grid item xs={12} md={6} key={index}>
-                <Paper elevation={2} sx={{ p: 3, height: '100%' }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <Box sx={{ mr: 2, color: 'primary.main' }}>
-                      {edu.icon}
+            {workExperience.map((job, index) => (
+              <Grid item xs={12} key={index}>
+                <Paper elevation={2} sx={{ p: 4 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                    <Box
+                      sx={{
+                        backgroundColor: 'primary.main',
+                        borderRadius: '50%',
+                        p: 1.5,
+                        mr: 3,
+                        color: 'white'
+                      }}
+                    >
+                      <Work />
                     </Box>
-                    <Box>
-                      <Typography variant="h6" gutterBottom>
-                        {edu.degree}
+                    <Box sx={{ flexGrow: 1 }}>
+                      <Typography variant="h5" component="h3" gutterBottom>
+                        {job.title}
                       </Typography>
-                      <Typography variant="subtitle1" color="primary">
-                        {edu.school}
+                      <Typography variant="h6" color="primary" gutterBottom>
+                        {job.company}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {edu.period}
+                      <Typography variant="body2" color="text.secondary" gutterBottom>
+                        {job.period} • {job.location}
                       </Typography>
                     </Box>
                   </Box>
-                  <Typography variant="body2">
-                    {edu.description}
+                  
+                  <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+                    {job.description}
                   </Typography>
+                  
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                    {job.technologies.map((tech) => (
+                      <Chip
+                        key={tech}
+                        label={tech}
+                        size="small"
+                        variant="outlined"
+                        color="secondary"
+                      />
+                    ))}
+                  </Box>
                 </Paper>
               </Grid>
             ))}

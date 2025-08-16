@@ -10,7 +10,7 @@ import {
   CardMedia,
   Button,
   Chip,
-  useTheme,
+  useTheme
 } from '@mui/material';
 import { GitHub, Launch, Code } from '@mui/icons-material';
 
@@ -19,23 +19,23 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.',
-      image: 'https://via.placeholder.com/400x250/1976d2/ffffff?text=E-Commerce',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
-      github: 'https://github.com/NathanStanislavsky/ecommerce-platform',
-      live: 'https://ecommerce-demo.com',
-      featured: true
+      title: 'PantryChef',
+      description: 'A user-authenticated web application with semantic, ingredient-based search of over 200,000+ recipes using MongoDB Atlas Search. Built a collaborative filtering recommender using SVD and an HNSW index to serve personalized results in under 100ms. Developed a resilient, multi-service backend by deploying the recommendation model as a distinct Python FastAPI microservice on Google Cloud Run.',
+      image: 'https://via.placeholder.com/400x250/1976d2/ffffff?text=PantryChef',
+      technologies: ['SvelteKit', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Google Cloud', 'MongoDB Atlas Search', 'FastAPI', 'MLOps'],
+      github: 'https://github.com/NathanStanislavsky/pantrychef',
+      live: 'https://recipe-search-psi.vercel.app/',
+      featured: true,
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://via.placeholder.com/400x250/388e3c/ffffff?text=Task+App',
-      technologies: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL', 'Material-UI'],
-      github: 'https://github.com/NathanStanislavsky/task-manager',
-      live: 'https://task-manager-demo.com',
-      featured: true
-    },
+      title: 'Chess Engine',
+      description: 'Designed and developed a high-performance chess engine using bitboards capable of calculating 8,000,000 positions/s. Implemented Minimax and Alpha-Beta Pruning algorithms to optimize best move search. Developed advanced features including Transposition hash table, move-ordering, and Quiescence search to improve best move search accuracy.',
+      image: 'https://via.placeholder.com/400x250/388e3c/ffffff?text=Chess+Engine',
+      technologies: ['C', 'C++', 'Git', 'Bitboards', 'Minimax Algorithm', 'Alpha-Beta Pruning', 'Transposition Tables'],
+      github: 'https://github.com/NathanStanislavsky/chess-engine',
+      live: null,
+      featured: true,
+    }
   ];
 
   const handleProjectClick = (url) => {
@@ -50,15 +50,10 @@ const Projects = () => {
         <Typography variant="h3" component="h2" gutterBottom align="center" sx={{ mb: 6 }}>
           Featured Projects
         </Typography>
-        
-        <Typography variant="body1" color="text.secondary" align="center" sx={{ mb: 6, maxWidth: 800, mx: 'auto' }}>
-          Here are some of the projects I've worked on. Each project represents different skills and technologies 
-          I've used to solve real-world problems and create valuable applications.
-        </Typography>
 
         <Grid container spacing={4}>
           {projects.map((project, index) => (
-            <Grid item xs={12} md={6} lg={4} key={index}>
+            <Grid item xs={12} md={6} key={index}>
               <Card 
                 elevation={3} 
                 sx={{ 
@@ -74,13 +69,13 @@ const Projects = () => {
               >
                 <CardMedia
                   component="img"
-                  height="200"
+                  height="250"
                   image={project.image}
                   alt={project.title}
                   sx={{ objectFit: 'cover' }}
                 />
                 
-                <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: 3 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                     <Typography variant="h6" component="h3" gutterBottom sx={{ flexGrow: 1 }}>
                       {project.title}
@@ -96,12 +91,12 @@ const Projects = () => {
                     )}
                   </Box>
                   
-                  <Typography variant="body2" color="text.secondary" paragraph sx={{ flexGrow: 1 }}>
+                  <Typography variant="body2" color="text.secondary" paragraph sx={{ flexGrow: 1, mb: 2 }}>
                     {project.description}
                   </Typography>
                   
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 6).map((tech) => (
                       <Chip
                         key={tech}
                         label={tech}
@@ -113,14 +108,14 @@ const Projects = () => {
                   </Box>
                 </CardContent>
                 
-                <CardActions sx={{ justifyContent: 'space-between', px: 2, pb: 2 }}>
+                <CardActions sx={{ justifyContent: 'space-between', px: 3, pb: 3 }}>
                   <Button
                     size="small"
                     startIcon={<GitHub />}
                     onClick={() => handleProjectClick(project.github)}
                     disabled={!project.github}
                   >
-                    Code
+                    View Code
                   </Button>
                   
                   {project.live && (
@@ -138,23 +133,6 @@ const Projects = () => {
             </Grid>
           ))}
         </Grid>
-
-        <Box sx={{ textAlign: 'center', mt: 6 }}>
-          <Typography variant="h6" gutterBottom>
-            Want to see more?
-          </Typography>
-          <Typography variant="body2" color="text.secondary" paragraph>
-            Check out my GitHub profile for additional projects and contributions.
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            startIcon={<GitHub />}
-            onClick={() => window.open('https://github.com/NathanStanislavsky', '_blank')}
-          >
-            View All Projects
-          </Button>
-        </Box>
       </Container>
     </Box>
   );

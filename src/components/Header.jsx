@@ -35,6 +35,7 @@ const Header = ({ onSectionChange }) => {
     { text: 'About', section: 'about' },
     { text: 'Experience', section: 'experience' },
     { text: 'Projects', section: 'projects' },
+    { text: 'Contact', section: 'contact' }
   ];
 
   const drawer = (
