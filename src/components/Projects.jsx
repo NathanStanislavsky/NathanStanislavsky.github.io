@@ -51,7 +51,7 @@ const Projects = () => {
           Featured Projects
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={3} justifyContent="center">
           {projects.map((project, index) => (
             <Grid item xs={12} md={6} key={index}>
               <Card 
@@ -60,6 +60,8 @@ const Projects = () => {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
+                  maxWidth: '550px',
+                  mx: 'auto',
                   transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
                   '&:hover': {
                     transform: 'translateY(-4px)',
