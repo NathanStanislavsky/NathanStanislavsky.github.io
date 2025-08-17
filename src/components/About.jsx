@@ -80,11 +80,11 @@ const About = () => {
               }}
             />
             <Chip
-              icon={<Phone />}
-              label="917-670-8953"
+              icon={<LinkedIn />}
+              label="LinkedIn"
               clickable
               variant="outlined"
-              onClick={() => window.open('tel:917-670-8953', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/nathan-stanislavsky/', '_blank')}
               sx={{
                 '&:hover': {
                   backgroundColor: 'primary.main',
