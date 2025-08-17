@@ -10,6 +10,7 @@ import {
   Divider
 } from '@mui/material';
 import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
+import NathanImage from '../assets/NathanImage.png';
 
 const About = () => {
 
@@ -18,14 +19,17 @@ const About = () => {
       <Container maxWidth="lg">
         {/* Hero Section */}
         <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Avatar
+          <Box
+            component="img"
+            src={NathanImage}
+            alt="Nathan Stanislavsky"
             sx={{
               width: 150,
               height: 150,
               mx: 'auto',
               mb: 3,
-              fontSize: '3rem',
-              bgcolor: 'primary.main',
+              borderRadius: '50%',
+              objectFit: 'cover',
               border: '4px solid #E3DBA9',
               boxShadow: '0 8px 32px rgba(11, 115, 95, 0.3)',
               '&:hover': {
@@ -33,9 +37,7 @@ const About = () => {
                 boxShadow: '0 12px 40px rgba(11, 115, 95, 0.4)',
               },
             }}
-          >
-            NS
-          </Avatar>
+          />
           <Typography variant="h2" component="h1" gutterBottom>
             Nathan Stanislavsky
           </Typography>
