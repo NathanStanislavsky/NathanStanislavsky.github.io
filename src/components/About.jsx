@@ -7,7 +7,6 @@ import {
   Chip
 } from '@mui/material';
 import { GitHub, LinkedIn, Email } from '@mui/icons-material';
-import NathanImage from '/NathanImage.png';
 
 const About = () => {
 
@@ -27,7 +26,7 @@ const About = () => {
           >
             <Box
               component="img"
-              src={NathanImage}
+              src={`${import.meta.env.BASE_URL}NathanImage.png`}
               alt="Nathan Stanislavsky"
               sx={{
                 width: { xs: 100, sm: 120 },

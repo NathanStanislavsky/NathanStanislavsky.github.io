@@ -8,9 +8,6 @@ import {
   Grid
 } from '@mui/material';
 import { GitHub, Launch } from '@mui/icons-material';
-import PantryChefImage from '/PantryChefImage.png';
-import ChessImage from '/ChessImage.png';
-import PlanEduImage from '/planedu.png';
 
 const Projects = () => {
 
@@ -18,7 +15,7 @@ const Projects = () => {
     {
       title: 'PantryChef',
       description: 'A scalable, cloud-native recipe search platform featuring a microservice backend on Google Cloud Platform. The system utilizes a hybrid machine learning engine that integrates SVD batch models with real-time SGD updates to give user real-time recipe recommendations. It features a centralized vector search database in PostgreSQL to perform low-latency similarity searches across 200,000+ recipes.',
-      image: PantryChefImage,
+      image: `${import.meta.env.BASE_URL}PantryChefImage.png`,
       technologies: ['SvelteKit', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Google Cloud', 'MongoDB Atlas Search', 'FastAPI', 'MLOps'],
       github: 'https://github.com/NathanStanislavsky/RecipeSearch',
       live: 'https://recipe-search-psi.vercel.app/',
@@ -27,7 +24,7 @@ const Projects = () => {
     {
       title: 'PlanEdu',
       description: 'I worked on a team of four to build an AI-powered course-planning platform featuring a swiping-style discovery UI and automated transcript parsing which won 3rd place at the BU DS+X hackathon. We engineered a recommendation engine using OpenAI embeddings and a schedule optimizer with Google OR-Tools to handle prerequisites and time conflicts.',
-      image: PlanEduImage,
+      image: `${import.meta.env.BASE_URL}planedu.png`,
       technologies: ['React', 'Node.js', 'Express', 'Python', 'PostgreSQL'],
       github: 'https://github.com/NathanStanislavsky/DSXBU',
       live: null,
@@ -36,7 +33,7 @@ const Projects = () => {
     {
       title: 'Chess Engine',
       description: 'A high-performance C++ chess engine based on bitboard data structures, capable of calculating 8,000,000 positions per second. It implements Minimax and Alpha-Beta Pruning algorithms to cut search time by 75% , utilizing Transposition tables and Quiescence search to identify optimal moves efficiently.',
-      image: ChessImage,
+      image: `${import.meta.env.BASE_URL}ChessImage.png`,
       technologies: ['C', 'C++', 'Git', 'Bitboards', 'Minimax Algorithm', 'Alpha-Beta Pruning', 'Transposition Tables'],
       github: 'https://github.com/NathanStanislavsky/bitboard',
       live: null,
@@ -185,8 +182,8 @@ const Projects = () => {
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
             {[
               'Java', 'Python', 'C/C++', 'JavaScript', 'TypeScript', 'HTML/CSS', 'x86 Assembly',
-              'SvelteKit', 'React', 'Node.js', 'Tailwind', 'Pandas', 'NumPy', 'scikit-surprise',
-              'FastAPI', 'FAISS', 'PyMongo', 'Google Cloud SDK', 'MongoDB', 'PostgreSQL',
+              'SvelteKit', 'React', 'Node.js', 'Tailwind', 'Pandas', 'NumPy',
+              'FastAPI', 'FAISS', 'MongoDB', 'PostgreSQL',
               'Prisma ORM', 'Drizzle ORM', 'Git', 'Docker', 'Vercel', 'Sanity CMS'
             ].map((skill) => (
               <Chip
