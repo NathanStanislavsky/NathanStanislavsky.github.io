@@ -7,7 +7,7 @@ import {
   IconButton,
   Drawer,
   List,
-  ListItem,
+  ListItemButton,
   ListItemText,
   Box,
   useTheme,
@@ -40,8 +40,7 @@ const Header = ({ onSectionChange }) => {
   const drawer = (
     <List sx={{ pt: 2 }}>
       {menuItems.map((item) => (
-        <ListItem 
-          button 
+        <ListItemButton 
           key={item.text}
           onClick={() => handleSectionChange(item.section)}
           sx={{
@@ -62,7 +61,7 @@ const Header = ({ onSectionChange }) => {
               }
             }}
           />
-        </ListItem>
+        </ListItemButton>
       ))}
     </List>
   );

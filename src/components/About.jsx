@@ -136,7 +136,7 @@ const About = () => {
 
         {/* About Content */}
         <Grid container spacing={{ xs: 3, md: 4 }}>
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Box sx={{ mb: 4 }}>
               <Typography 
                 variant="h3" 
@@ -165,7 +165,7 @@ const About = () => {
             </Box>
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Box>
               <Typography 
                 variant="h3" 

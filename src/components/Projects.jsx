@@ -4,7 +4,8 @@ import {
   Container,
   Typography,
   Button,
-  Chip
+  Chip,
+  Grid
 } from '@mui/material';
 import { GitHub, Launch } from '@mui/icons-material';
 import PantryChefImage from '../../public/PantryChefImage.png';
@@ -55,113 +56,108 @@ const Projects = () => {
           Projects
         </Typography>
 
-        <Box>
+        <Grid container spacing={3}>
           {projects.map((project, index) => (
-            <Box 
-              key={index}
-              sx={{ 
-                mb: { xs: 4, md: 5 },
-                pb: { xs: 4, md: 5 },
-                borderBottom: index < projects.length - 1 ? '1px solid #D9D4CC' : 'none'
-              }}
-            >
-              <Box
-                component="img"
-                src={project.image}
-                alt={project.title}
-                sx={{
-                  width: '100%',
-                  height: { xs: 180, sm: 240 },
-                  objectFit: 'cover',
-                  mb: 3,
-                  display: 'block',
-                  borderRadius: '12px',
-                  border: '2px solid',
-                  borderColor: index % 2 === 0 ? 'primary.main' : 'secondary.main',
-                  transition: 'all 0.3s ease-in-out',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: '0 8px 24px rgba(139, 111, 71, 0.3)',
-                  },
-                }}
-              />
-              
-              <Box sx={{ mb: 2 }}>
-                <Typography 
-                  variant="h4" 
-                  component="h3" 
-                  gutterBottom
-                  sx={{ 
-                    mb: 1.5,
-                    fontSize: { xs: '1.25rem', sm: '1.5rem' },
-                    fontWeight: 600,
-                    color: index % 2 === 0 ? 'primary.main' : 'success.main'
+            <Grid size={{ xs: 12, md: 6 }} key={index}>
+              <Box>
+                <Box
+                  component="img"
+                  src={project.image}
+                  alt={project.title}
+                  sx={{
+                    width: '100%',
+                    height: { xs: 180, sm: 200 },
+                    objectFit: 'cover',
+                    mb: 3,
+                    display: 'block',
+                    borderRadius: '12px',
+                    border: '2px solid',
+                    borderColor: index % 2 === 0 ? 'primary.main' : 'secondary.main',
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      boxShadow: '0 8px 24px rgba(139, 111, 71, 0.3)',
+                    },
                   }}
-                >
-                  {project.title}
-                </Typography>
+                />
                 
-                <Typography 
-                  variant="body1" 
-                  color="text.primary" 
-                  paragraph
-                  sx={{ 
-                    mb: 2,
-                    fontSize: '1rem',
-                    lineHeight: 1.6
-                  }}
-                >
-                  {project.description}
-                </Typography>
+                <Box sx={{ mb: 2 }}>
+                  <Typography 
+                    variant="h4" 
+                    component="h3" 
+                    gutterBottom
+                    sx={{ 
+                      mb: 1.5,
+                      fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                      fontWeight: 600,
+                      color: index % 2 === 0 ? 'primary.main' : 'success.main'
+                    }}
+                  >
+                    {project.title}
+                  </Typography>
+                  
+                  <Typography 
+                    variant="body1" 
+                    color="text.primary" 
+                    paragraph
+                    sx={{ 
+                      mb: 2,
+                      fontSize: '1rem',
+                      lineHeight: 1.6
+                    }}
+                  >
+                    {project.description}
+                  </Typography>
+                  
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+                    {project.technologies.slice(0, 8).map((tech) => (
+                      <Chip
+                        key={tech}
+                        label={tech}
+                        size="small"
+                        variant="outlined"
+                        sx={{
+                          fontSize: '0.75rem',
+                          height: '26px',
+                        }}
+                      />
+                    ))}
+                  </Box>
+                </Box>
                 
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
-                  {project.technologies.slice(0, 8).map((tech) => (
-                    <Chip
-                      key={tech}
-                      label={tech}
-                      size="small"
+                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                  {project.github && (
+                    <Button
                       variant="outlined"
+                      startIcon={<GitHub />}
+                      onClick={() => handleProjectClick(project.github)}
                       sx={{
-                        fontSize: '0.75rem',
-                        height: '26px',
+                        fontSize: '0.875rem',
+                        textTransform: 'none',
                       }}
-                    />
-                  ))}
+                    >
+                      View Code
+                    </Button>
+                  )}
+                  
+                  {project.live && (
+                    <Button
+                      variant="contained"
+                      startIcon={<Launch />}
+                      onClick={() => handleProjectClick(project.live)}
+                      sx={{
+                        fontSize: '0.875rem',
+                        textTransform: 'none',
+                      }}
+                    >
+                      Live Demo
+                    </Button>
+                  )}
                 </Box>
               </Box>
-              
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                {project.github && (
-                  <Button
-                    variant="outlined"
-                    startIcon={<GitHub />}
-                    onClick={() => handleProjectClick(project.github)}
-                    sx={{
-                      fontSize: '0.875rem',
-                      textTransform: 'none',
-                    }}
-                  >
-                    View Code
-                  </Button>
-                )}
-                
-                {project.live && (
-                  <Button
-                    variant="contained"
-                    startIcon={<Launch />}
-                    onClick={() => handleProjectClick(project.live)}
-                    sx={{
-                      fontSize: '0.875rem',
-                      textTransform: 'none',
-                    }}
-                  >
-                    Live Demo
-                  </Button>
-                )}
-              </Box>
-            </Box>
+            </Grid>
           ))}
-        </Box>
+        </Grid>
 
         {/* Skills Section */}
         <Box sx={{ mt: { xs: 4, md: 5 }, pt: { xs: 4, md: 5 }, borderTop: '2px solid', borderColor: 'warning.main' }}>
