@@ -10,7 +10,7 @@ import {
   Divider
 } from '@mui/material';
 import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
-import NathanImage from '../assets/NathanImage.png';
+import NathanImage from '../../public/NathanImage.png';
 
 const About = () => {
 
