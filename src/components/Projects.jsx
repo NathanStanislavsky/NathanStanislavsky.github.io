@@ -10,13 +10,14 @@ import {
 import { GitHub, Launch } from '@mui/icons-material';
 import PantryChefImage from '../../public/PantryChefImage.png';
 import ChessImage from '../../public/ChessImage.png';
+import PlanEduImage from '../../public/planedu.png';
 
 const Projects = () => {
 
   const projects = [
     {
       title: 'PantryChef',
-      description: 'A user-authenticated web application with semantic, ingredient-based search of over 200,000+ recipes using MongoDB Atlas Search. Built a collaborative filtering recommender using SVD and an HNSW index to serve personalized results in under 100ms. Developed a resilient, multi-service backend by deploying the recommendation model as a distinct Python FastAPI microservice on Google Cloud Run.',
+      description: 'A scalable, cloud-native recipe search platform featuring a microservice backend on Google Cloud Platform. The system utilizes a hybrid machine learning engine that integrates SVD batch models with real-time SGD updates to give user real-time recipe recommendations. It features a centralized vector search database in PostgreSQL to perform low-latency similarity searches across 200,000+ recipes.',
       image: PantryChefImage,
       technologies: ['SvelteKit', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Google Cloud', 'MongoDB Atlas Search', 'FastAPI', 'MLOps'],
       github: 'https://github.com/NathanStanislavsky/RecipeSearch',
@@ -24,8 +25,17 @@ const Projects = () => {
       featured: true,
     },
     {
+      title: 'PlanEdu',
+      description: 'An AI-powered course-planning platform featuring a swiping-style discovery UI and automated transcript parsing. We engineered a recommendation engine using OpenAI embeddings and a schedule optimizer with Google OR-Tools to handle prerequisites and time conflicts.',
+      image: PlanEduImage,
+      technologies: ['React', 'Node.js', 'Express', 'Python', 'PostgreSQL'],
+      github: 'https://github.com/NathanStanislavsky/DSXBU',
+      live: null,
+      featured: true,
+    },
+    {
       title: 'Chess Engine',
-      description: 'Designed and developed a high-performance chess engine using bitboards capable of calculating 8,000,000 positions/s. Implemented Minimax and Alpha-Beta Pruning algorithms to optimize best move search. Developed advanced features including Transposition hash table, move-ordering, and Quiescence search to improve best move search accuracy.',
+      description: 'A high-performance C++ chess engine based on bitboard data structures, capable of calculating 8,000,000 positions per second. It implements Minimax and Alpha-Beta Pruning algorithms to cut search time by 75% , utilizing Transposition tables and Quiescence search to identify optimal moves efficiently.',
       image: ChessImage,
       technologies: ['C', 'C++', 'Git', 'Bitboards', 'Minimax Algorithm', 'Alpha-Beta Pruning', 'Transposition Tables'],
       github: 'https://github.com/NathanStanislavsky/bitboard',

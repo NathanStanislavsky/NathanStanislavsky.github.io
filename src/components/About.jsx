@@ -77,8 +77,7 @@ const About = () => {
               lineHeight: 1.6
             }}
           >
-            Passionate software engineer with expertise in full-stack development and system architecture. 
-            Currently pursuing a B.A. in Math and Computer Science at Boston University with a strong focus on building scalable applications.
+            Passionate software engineer with expertise in full-stack development and data driven applications. 
           </Typography>
           
           {/* Contact Info */}
@@ -150,13 +149,11 @@ const About = () => {
                 About
               </Typography>
               <Typography variant="body1" paragraph sx={{ mb: 2, fontSize: '1rem', lineHeight: 1.6 }}>
-                I'm a dedicated software engineer currently pursuing my B.A. in Math and Computer Science at Boston University, 
-                maintaining a 3.79 GPA and earning Dean's List recognition. My passion lies in building robust, scalable applications 
+                I'm a dedicated software engineer currently pursuing my B.A. in Math and Computer Science at Boston University. My passion lies in building robust, scalable applications 
                 and solving complex challenges.
               </Typography>
               <Typography variant="body1" paragraph sx={{ mb: 2, fontSize: '1rem', lineHeight: 1.6 }}>
-                I'm actively involved in the tech community as a Software Engineer at Hack4Impact and a Junior Quantitative Developer 
-                at BUAlpha. When I'm not coding, you can find me playing chess or at the gym.
+                I'm actively involved in the tech community as a Software Engineer at Hack4Impact. When I'm not coding, you can find me playing chess or at the gym.
               </Typography>
               <Typography variant="body1" sx={{ fontSize: '1rem', lineHeight: 1.6 }}>
                 I believe in writing clean, maintainable code and following best practices like Test-Driven Development. My goal is 
@@ -203,14 +200,14 @@ const About = () => {
                 gutterBottom
                 sx={{ mb: 2, fontSize: '0.875rem' }}
               >
-                GPA: 3.79 | Dean's List | Expected May 2028
+                GPA: 3.79 | Dean's List | Expected May 2027
               </Typography>
               <Typography variant="body2" paragraph sx={{ mb: 1.5, lineHeight: 1.6, fontSize: '0.875rem' }}>
-                <strong>Relevant Coursework:</strong> Data Structures and Algorithms, Combinatoric Structures, 
-                Computer Systems, Linear Algebra, Multivariate Calculus
+                <strong>Relevant Coursework:</strong> Data Structures and Algorithms, Databases, 
+                Computer Systems, Linear Algebra, Multivariate Calculus, Probability
               </Typography>
               <Typography variant="body2" sx={{ lineHeight: 1.6, fontSize: '0.875rem' }}>
-                <strong>Activities & Clubs:</strong> Software Engineer at Hack4Impact, Junior Quantitative Developer at BUAlpha, Chess Club
+                <strong>Activities & Clubs:</strong> Software Engineer at Hack4Impact
               </Typography>
             </Box>
           </Grid>

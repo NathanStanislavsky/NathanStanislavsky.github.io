@@ -14,7 +14,7 @@ const Experience = () => {
       period: 'July 2024 – Aug 2024; May 2025 – Aug 2025',
       location: 'Greenwich, CT',
       description: "At DragonGC, I enhanced the performance and reliability of the company's core AI platform. My contributions included engineering the integration of Large Language Models (LLMs) to deliver comprehensive compliance insights to users, optimizing the data ingestion pipeline, and executing large-scale data migrations to improve scalability. I also developed a suite of internal tools that empowered non-technical users to validate search results, significantly streamlining their workflow and improving data accuracy.",
-      technologies: ['TypeScript', 'Node.js', 'SvelteKit', 'PostgreSQL', 'Docker', 'DigitalOcean S3', 'Test Driven Development', 'UI/UX']
+      technologies: ['TypeScript', 'Node.js', 'SvelteKit', 'PostgreSQL', 'Docker', 'DigitalOcean S3', 'Test Driven Development']
     }
   ];
 
