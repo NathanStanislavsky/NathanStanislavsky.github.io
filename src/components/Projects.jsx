@@ -8,9 +8,9 @@ import {
   Grid
 } from '@mui/material';
 import { GitHub, Launch } from '@mui/icons-material';
-import PantryChefImage from '../../public/PantryChefImage.png';
-import ChessImage from '../../public/ChessImage.png';
-import PlanEduImage from '../../public/planedu.png';
+import PantryChefImage from '/PantryChefImage.png';
+import ChessImage from '/ChessImage.png';
+import PlanEduImage from '/planedu.png';
 
 const Projects = () => {
 
@@ -26,7 +26,7 @@ const Projects = () => {
     },
     {
       title: 'PlanEdu',
-      description: 'An AI-powered course-planning platform featuring a swiping-style discovery UI and automated transcript parsing. We engineered a recommendation engine using OpenAI embeddings and a schedule optimizer with Google OR-Tools to handle prerequisites and time conflicts.',
+      description: 'I worked on a team of four to build an AI-powered course-planning platform featuring a swiping-style discovery UI and automated transcript parsing which won 3rd place at the BU DS+X hackathon. We engineered a recommendation engine using OpenAI embeddings and a schedule optimizer with Google OR-Tools to handle prerequisites and time conflicts.',
       image: PlanEduImage,
       technologies: ['React', 'Node.js', 'Express', 'Python', 'PostgreSQL'],
       github: 'https://github.com/NathanStanislavsky/DSXBU',

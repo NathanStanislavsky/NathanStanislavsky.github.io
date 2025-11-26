@@ -7,7 +7,7 @@ import {
   Chip
 } from '@mui/material';
 import { GitHub, LinkedIn, Email } from '@mui/icons-material';
-import NathanImage from '../../public/NathanImage.png';
+import NathanImage from '/NathanImage.png';
 
 const About = () => {
 
