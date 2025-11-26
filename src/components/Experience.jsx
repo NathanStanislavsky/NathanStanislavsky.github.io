@@ -15,6 +15,14 @@ const Experience = () => {
       location: 'Greenwich, CT',
       description: "At DragonGC, I enhanced the performance and reliability of the company's core AI platform. My contributions included engineering the integration of Large Language Models (LLMs) to deliver comprehensive compliance insights to users, optimizing the data ingestion pipeline, and executing large-scale data migrations to improve scalability. I also developed a suite of internal tools that empowered non-technical users to validate search results, significantly streamlining their workflow and improving data accuracy.",
       technologies: ['TypeScript', 'Node.js', 'SvelteKit', 'PostgreSQL', 'Docker', 'DigitalOcean S3', 'Test Driven Development']
+    },
+    {
+      title: 'Software Engineer',
+      company: 'Hack4Impact BU',
+      period: 'Sept 2025 – Present',
+      location: 'Boston, MA',
+      description: "I architected a full-stack club management platform utilizing React, TypeScript, and a Strapi CMS. This initiative streamlined event and project applications for active users, successfully reducing content update time by 90%.",
+      technologies: ['TypeScript', 'Node.js', 'React', 'Strapi CMS']
     }
   ];
 
