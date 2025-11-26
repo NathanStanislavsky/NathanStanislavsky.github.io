@@ -90,7 +90,11 @@ const Header = ({ onSectionChange }) => {
               flexGrow: 1,
               fontWeight: 600,
               letterSpacing: '-0.01em',
-              fontSize: { xs: '1rem', sm: '1.125rem' }
+              fontSize: { xs: '1rem', sm: '1.125rem' },
+              background: 'linear-gradient(135deg, #8B6F47 0%, #C17A5A 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
             }}
           >
             Nathan Stanislavsky
@@ -113,20 +117,21 @@ const Header = ({ onSectionChange }) => {
             </IconButton>
           ) : (
             <Box sx={{ display: 'flex', gap: 1 }}>
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                 <Button
                   key={item.text}
                   color="inherit"
                   onClick={() => handleSectionChange(item.section)}
                   sx={{
-                    color: 'text.secondary',
-                    fontWeight: 400,
+                    color: ['primary.main', 'info.main', 'success.main'][index],
+                    fontWeight: 500,
                     fontSize: '0.9375rem',
                     textTransform: 'none',
                     px: 2,
+                    borderRadius: '8px',
                     '&:hover': {
-                      color: 'text.primary',
-                      backgroundColor: 'transparent',
+                      color: ['primary.dark', 'info.dark', 'success.dark'][index],
+                      backgroundColor: ['rgba(139, 111, 71, 0.1)', 'rgba(107, 142, 90, 0.1)', 'rgba(212, 165, 116, 0.1)'][index],
                     }
                   }}
                 >

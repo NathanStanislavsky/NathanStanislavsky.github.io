@@ -40,15 +40,16 @@ const Projects = () => {
   };
 
   return (
-    <Box sx={{ py: { xs: 6, md: 12 } }}>
+    <Box sx={{ py: { xs: 4, md: 6 } }}>
       <Container maxWidth="md">
         <Typography 
           variant="h3" 
           component="h2" 
           gutterBottom
           sx={{ 
-            mb: { xs: 6, md: 8 },
-            fontSize: { xs: '1.75rem', sm: '2rem' }
+            mb: { xs: 3, md: 4 },
+            fontSize: { xs: '1.5rem', sm: '1.75rem' },
+            color: 'success.main'
           }}
         >
           Projects
@@ -59,9 +60,9 @@ const Projects = () => {
             <Box 
               key={index}
               sx={{ 
-                mb: { xs: 8, md: 12 },
-                pb: { xs: 8, md: 12 },
-                borderBottom: index < projects.length - 1 ? '1px solid #E5E5E5' : 'none'
+                mb: { xs: 4, md: 5 },
+                pb: { xs: 4, md: 5 },
+                borderBottom: index < projects.length - 1 ? '1px solid #D9D4CC' : 'none'
               }}
             >
               <Box
@@ -70,27 +71,31 @@ const Projects = () => {
                 alt={project.title}
                 sx={{
                   width: '100%',
-                  height: { xs: 200, sm: 300 },
+                  height: { xs: 180, sm: 240 },
                   objectFit: 'cover',
-                  mb: 4,
+                  mb: 3,
                   display: 'block',
-                  filter: 'grayscale(100%)',
-                  transition: 'filter 0.3s ease-in-out',
+                  borderRadius: '12px',
+                  border: '2px solid',
+                  borderColor: index % 2 === 0 ? 'primary.main' : 'secondary.main',
+                  transition: 'all 0.3s ease-in-out',
                   '&:hover': {
-                    filter: 'grayscale(0%)',
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 24px rgba(139, 111, 71, 0.3)',
                   },
                 }}
               />
               
-              <Box sx={{ mb: 3 }}>
+              <Box sx={{ mb: 2 }}>
                 <Typography 
                   variant="h4" 
                   component="h3" 
                   gutterBottom
                   sx={{ 
-                    mb: 2,
-                    fontSize: { xs: '1.5rem', sm: '1.75rem' },
-                    fontWeight: 600
+                    mb: 1.5,
+                    fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                    fontWeight: 600,
+                    color: index % 2 === 0 ? 'primary.main' : 'success.main'
                   }}
                 >
                   {project.title}
@@ -101,15 +106,15 @@ const Projects = () => {
                   color="text.primary" 
                   paragraph
                   sx={{ 
-                    mb: 4,
-                    fontSize: '1.0625rem',
-                    lineHeight: 1.8
+                    mb: 2,
+                    fontSize: '1rem',
+                    lineHeight: 1.6
                   }}
                 >
                   {project.description}
                 </Typography>
                 
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 4 }}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
                   {project.technologies.slice(0, 8).map((tech) => (
                     <Chip
                       key={tech}
@@ -117,13 +122,8 @@ const Projects = () => {
                       size="small"
                       variant="outlined"
                       sx={{
-                        fontSize: '0.8125rem',
-                        height: '28px',
-                        '&:hover': {
-                          borderColor: 'text.primary',
-                          color: 'text.primary',
-                          backgroundColor: 'transparent',
-                        },
+                        fontSize: '0.75rem',
+                        height: '26px',
                       }}
                     />
                   ))}
@@ -137,7 +137,7 @@ const Projects = () => {
                     startIcon={<GitHub />}
                     onClick={() => handleProjectClick(project.github)}
                     sx={{
-                      fontSize: '0.9375rem',
+                      fontSize: '0.875rem',
                       textTransform: 'none',
                     }}
                   >
@@ -151,7 +151,7 @@ const Projects = () => {
                     startIcon={<Launch />}
                     onClick={() => handleProjectClick(project.live)}
                     sx={{
-                      fontSize: '0.9375rem',
+                      fontSize: '0.875rem',
                       textTransform: 'none',
                     }}
                   >
@@ -164,13 +164,14 @@ const Projects = () => {
         </Box>
 
         {/* Skills Section */}
-        <Box sx={{ mt: { xs: 8, md: 12 }, pt: { xs: 8, md: 12 }, borderTop: '1px solid #E5E5E5' }}>
+        <Box sx={{ mt: { xs: 4, md: 5 }, pt: { xs: 4, md: 5 }, borderTop: '2px solid', borderColor: 'warning.main' }}>
           <Typography 
             variant="h3" 
             gutterBottom
             sx={{ 
-              mb: 4,
-              fontSize: { xs: '1.75rem', sm: '2rem' }
+              mb: 3,
+              fontSize: { xs: '1.5rem', sm: '1.75rem' },
+              color: 'warning.main'
             }}
           >
             Technical Skills
@@ -188,13 +189,8 @@ const Projects = () => {
                 variant="outlined"
                 size="small"
                 sx={{
-                  fontSize: '0.8125rem',
-                  height: '28px',
-                  '&:hover': {
-                    borderColor: 'text.primary',
-                    color: 'text.primary',
-                    backgroundColor: 'transparent',
-                  },
+                  fontSize: '0.75rem',
+                  height: '26px',
                 }}
               />
             ))}

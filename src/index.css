@@ -14,9 +14,9 @@ html {
 
 body {
   font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-  line-height: 1.7;
-  color: #1A1A1A;
-  background: #FFFFFF;
+  line-height: 1.6;
+  color: #3E3A35;
+  background: #F5F1EB;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -38,16 +38,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAFAFA;
+  background: #F5F1EB;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E5E5E5;
+  background: #D9D4CC;
   border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #CCCCCC;
+  background: #8B6F47;
 }
 
 /* Smooth transitions */
@@ -60,19 +60,19 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #1A1A1A;
+  outline: 2px solid #8B6F47;
   outline-offset: 2px;
 }
 
 /* Selection styling */
 ::selection {
-  background-color: #F0F0F0;
-  color: #1A1A1A;
+  background-color: #8B6F47;
+  color: #FFFFFF;
 }
 
 ::-moz-selection {
-  background-color: #F0F0F0;
-  color: #1A1A1A;
+  background-color: #8B6F47;
+  color: #FFFFFF;
 }
 
 /* Fade in animation */

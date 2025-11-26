@@ -19,15 +19,16 @@ const Experience = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 12 } }}>
+    <Box sx={{ py: { xs: 4, md: 6 } }}>
       <Container maxWidth="md">
         <Typography 
           variant="h3" 
           component="h2" 
           gutterBottom
           sx={{ 
-            mb: { xs: 6, md: 8 },
-            fontSize: { xs: '1.75rem', sm: '2rem' }
+            mb: { xs: 3, md: 4 },
+            fontSize: { xs: '1.5rem', sm: '1.75rem' },
+            color: 'success.main'
           }}
         >
           Experience
@@ -38,32 +39,36 @@ const Experience = () => {
             <Box 
               key={index}
               sx={{ 
-                mb: { xs: 6, md: 8 },
-                pb: { xs: 6, md: 8 },
-                borderBottom: index < workExperience.length - 1 ? '1px solid #E5E5E5' : 'none'
+                mb: index < workExperience.length - 1 ? { xs: 4, md: 5 } : 0,
+                pb: index < workExperience.length - 1 ? { xs: 4, md: 5 } : 0,
+                borderLeft: '4px solid',
+                borderColor: 'primary.main',
+                pl: 3,
+                borderBottom: index < workExperience.length - 1 ? '1px solid #D9D4CC' : 'none'
               }}
             >
-              <Box sx={{ mb: 3 }}>
+              <Box sx={{ mb: 2 }}>
                 <Typography 
                   variant="h4" 
                   component="h3" 
                   gutterBottom
                   sx={{ 
-                    mb: 1,
-                    fontSize: { xs: '1.5rem', sm: '1.75rem' },
-                    fontWeight: 600
+                    mb: 0.5,
+                    fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                    fontWeight: 600,
+                    color: 'primary.main'
                   }}
                 >
                   {job.title}
                 </Typography>
                 <Typography 
                   variant="h6" 
-                  color="text.secondary" 
+                  color="secondary.main" 
                   gutterBottom
                   sx={{ 
-                    mb: 1,
-                    fontWeight: 400,
-                    fontSize: '1rem'
+                    mb: 0.5,
+                    fontWeight: 500,
+                    fontSize: '0.9375rem'
                   }}
                 >
                   {job.company}
@@ -71,7 +76,7 @@ const Experience = () => {
                 <Typography 
                   variant="body2" 
                   color="text.secondary"
-                  sx={{ fontSize: '0.875rem' }}
+                  sx={{ fontSize: '0.8125rem' }}
                 >
                   {job.period} • {job.location}
                 </Typography>
@@ -81,9 +86,9 @@ const Experience = () => {
                 variant="body1" 
                 paragraph
                 sx={{ 
-                  mb: 4,
-                  fontSize: '1.0625rem',
-                  lineHeight: 1.8,
+                  mb: 2,
+                  fontSize: '1rem',
+                  lineHeight: 1.6,
                   color: 'text.primary'
                 }}
               >
@@ -98,13 +103,8 @@ const Experience = () => {
                     size="small"
                     variant="outlined"
                     sx={{
-                      fontSize: '0.8125rem',
-                      height: '28px',
-                      '&:hover': {
-                        borderColor: 'text.primary',
-                        color: 'text.primary',
-                        backgroundColor: 'transparent',
-                      },
+                      fontSize: '0.75rem',
+                      height: '26px',
                     }}
                   />
                 ))}

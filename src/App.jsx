@@ -6,29 +6,44 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-// Create a minimalistic custom theme
+// Create an earthy, warm theme
 const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#000000', // Pure black for contrast
-      light: '#333333',
-      dark: '#000000',
+      main: '#8B6F47', // Rich brown
+      light: '#A3885E',
+      dark: '#6B5638',
     },
     secondary: {
-      main: '#666666', // Subtle gray
-      light: '#999999',
-      dark: '#333333',
+      main: '#C17A5A', // Terracotta
+      light: '#D89273',
+      dark: '#9D6247',
+    },
+    success: {
+      main: '#6B8E5A', // Sage green
+      light: '#84A875',
+      dark: '#557048',
+    },
+    warning: {
+      main: '#D4A574', // Warm ochre
+      light: '#E4B890',
+      dark: '#B8885A',
+    },
+    info: {
+      main: '#7A8B7A', // Muted green-gray
+      light: '#95A495',
+      dark: '#627062',
     },
     background: {
-      default: '#FFFFFF', // Pure white background
-      paper: '#FAFAFA', // Slight off-white for cards
+      default: '#F5F1EB', // Warm off-white
+      paper: '#FFFFFF',
     },
     text: {
-      primary: '#1A1A1A', // Deep charcoal for excellent readability
-      secondary: '#666666', // Medium gray for secondary text
+      primary: '#3E3A35', // Dark brown-gray
+      secondary: '#6B6356', // Medium brown-gray
     },
-    divider: '#E5E5E5', // Very subtle divider
+    divider: '#D9D4CC', // Warm beige divider
   },
   typography: {
     fontFamily: '"Inter", "Helvetica Neue", "Arial", sans-serif',
@@ -81,7 +96,7 @@ const theme = createTheme({
   },
   spacing: 8,
   shape: {
-    borderRadius: 0, // Sharp, clean edges
+    borderRadius: 12, // Rounded corners for modern look
   },
   shadows: [
     'none',
@@ -123,28 +138,28 @@ const theme = createTheme({
           },
         },
         contained: {
-          backgroundColor: '#000000',
+          backgroundColor: '#8B6F47',
           color: '#FFFFFF',
           boxShadow: 'none',
           '&:hover': {
-            backgroundColor: '#1A1A1A',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+            backgroundColor: '#6B5638',
+            boxShadow: '0 4px 12px rgba(139, 111, 71, 0.4)',
           },
         },
         outlined: {
-          borderColor: '#1A1A1A',
-          borderWidth: '1.5px',
-          color: '#1A1A1A',
+          borderColor: '#8B6F47',
+          borderWidth: '2px',
+          color: '#8B6F47',
           '&:hover': {
-            backgroundColor: '#FAFAFA',
-            borderColor: '#000000',
-            borderWidth: '1.5px',
+            backgroundColor: 'rgba(139, 111, 71, 0.1)',
+            borderColor: '#6B5638',
+            borderWidth: '2px',
           },
         },
         text: {
-          color: '#1A1A1A',
+          color: '#8B6F47',
           '&:hover': {
-            backgroundColor: '#FAFAFA',
+            backgroundColor: 'rgba(139, 111, 71, 0.1)',
           },
         },
       },
@@ -186,36 +201,37 @@ const theme = createTheme({
         root: {
           backgroundColor: 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(10px)',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-          borderBottom: '1px solid #E5E5E5',
-          color: '#1A1A1A',
+          boxShadow: '0 2px 8px rgba(139, 111, 71, 0.1)',
+          borderBottom: '2px solid #8B6F47',
+          color: '#3E3A35',
         },
       },
     },
     MuiChip: {
       styleOverrides: {
         root: {
-          backgroundColor: '#FAFAFA',
-          border: '1px solid #E5E5E5',
-          color: '#666666',
-          borderRadius: 0,
-          fontWeight: 400,
+          backgroundColor: '#F5F1EB',
+          border: '1px solid #8B6F47',
+          color: '#8B6F47',
+          borderRadius: '8px',
+          fontWeight: 500,
           '&:hover': {
-            backgroundColor: '#F5F5F5',
-            borderColor: '#1A1A1A',
-            color: '#1A1A1A',
+            backgroundColor: '#8B6F47',
+            borderColor: '#8B6F47',
+            color: '#FFFFFF',
+            transform: 'translateY(-1px)',
           },
         },
         outlined: {
-          borderColor: '#E5E5E5',
-          color: '#666666',
+          borderColor: '#8B6F47',
+          color: '#8B6F47',
         },
       },
     },
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: '#E5E5E5',
+          borderColor: '#D9D4CC',
           borderWidth: '1px',
         },
       },
@@ -224,16 +240,16 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '& .MuiOutlinedInput-root': {
-            borderRadius: 0,
+            borderRadius: '8px',
             '& fieldset': {
-              borderColor: '#E5E5E5',
+              borderColor: '#D9D4CC',
             },
             '&:hover fieldset': {
-              borderColor: '#1A1A1A',
+              borderColor: '#8B6F47',
             },
             '&.Mui-focused fieldset': {
-              borderColor: '#1A1A1A',
-              borderWidth: '1.5px',
+              borderColor: '#8B6F47',
+              borderWidth: '2px',
             },
           },
         },

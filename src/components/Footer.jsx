@@ -33,25 +33,26 @@ const Footer = () => {
       component="footer"
       sx={{
         bgcolor: 'background.default',
-        borderTop: '1px solid #E5E5E5',
-        py: { xs: 4, md: 5 },
+        borderTop: '2px solid',
+        borderColor: 'primary.main',
+        py: { xs: 3, md: 4 },
         mt: 'auto'
       }}
     >
       <Container maxWidth="md">
         <Box sx={{ textAlign: 'center' }}>
           {/* Social Links */}
-          <Box sx={{ mb: 3 }}>
+          <Box sx={{ mb: 2 }}>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1.5 }}>
               {socialLinks.map((social, index) => (
                 <IconButton
                   key={index}
                   onClick={() => window.open(social.url, '_blank')}
                   sx={{
-                    color: 'text.secondary',
+                    color: ['primary.main', 'secondary.main', 'warning.main'][index],
                     '&:hover': {
-                      color: 'text.primary',
-                      backgroundColor: 'transparent',
+                      color: ['primary.dark', 'secondary.dark', 'warning.dark'][index],
+                      backgroundColor: 'rgba(139, 111, 71, 0.1)',
                       transform: 'translateY(-2px)',
                     },
                     transition: 'all 0.2s ease-in-out'
