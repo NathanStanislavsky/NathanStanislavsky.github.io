@@ -38,14 +38,30 @@ const Header = ({ onSectionChange }) => {
   ];
 
   const drawer = (
-    <List>
+    <List sx={{ pt: 2 }}>
       {menuItems.map((item) => (
         <ListItem 
           button 
           key={item.text}
           onClick={() => handleSectionChange(item.section)}
+          sx={{
+            py: 1.5,
+            px: 3,
+            '&:hover': {
+              backgroundColor: '#FAFAFA',
+            }
+          }}
         >
-          <ListItemText primary={item.text} />
+          <ListItemText 
+            primary={item.text}
+            primaryTypographyProps={{
+              sx: {
+                fontWeight: 400,
+                fontSize: '0.9375rem',
+                color: 'text.primary',
+              }
+            }}
+          />
         </ListItem>
       ))}
     </List>
@@ -55,22 +71,28 @@ const Header = ({ onSectionChange }) => {
     <>
       <AppBar 
         position="fixed" 
+        elevation={0}
         sx={{ 
           zIndex: theme.zIndex.drawer + 1,
-          width: '100vw',
-          left: '-50vw',
-          right: '-50vw',
-          marginLeft: '50vw',
-          marginRight: '50vw',
-          borderRadius: 0,
-          borderTopLeftRadius: 0,
-          borderTopRightRadius: 0,
-          borderBottomLeftRadius: 0,
-          borderBottomRightRadius: 0,
         }}
       >
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Toolbar sx={{ 
+          maxWidth: '1200px', 
+          width: '100%', 
+          mx: 'auto',
+          px: { xs: 2, sm: 4 },
+          py: 2
+        }}>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ 
+              flexGrow: 1,
+              fontWeight: 600,
+              letterSpacing: '-0.01em',
+              fontSize: { xs: '1rem', sm: '1.125rem' }
+            }}
+          >
             Nathan Stanislavsky
           </Typography>
           
@@ -78,18 +100,35 @@ const Header = ({ onSectionChange }) => {
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              edge="start"
+              edge="end"
               onClick={handleDrawerToggle}
+              sx={{
+                color: 'text.primary',
+                '&:hover': {
+                  backgroundColor: 'rgba(0,0,0,0.05)',
+                }
+              }}
             >
               <MenuIcon />
             </IconButton>
           ) : (
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box sx={{ display: 'flex', gap: 1 }}>
               {menuItems.map((item) => (
                 <Button
                   key={item.text}
                   color="inherit"
                   onClick={() => handleSectionChange(item.section)}
+                  sx={{
+                    color: 'text.secondary',
+                    fontWeight: 400,
+                    fontSize: '0.9375rem',
+                    textTransform: 'none',
+                    px: 2,
+                    '&:hover': {
+                      color: 'text.primary',
+                      backgroundColor: 'transparent',
+                    }
+                  }}
                 >
                   {item.text}
                 </Button>
@@ -109,7 +148,12 @@ const Header = ({ onSectionChange }) => {
         }}
         sx={{
           display: { xs: 'block', md: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+          '& .MuiDrawer-paper': { 
+            boxSizing: 'border-box', 
+            width: 280,
+            borderLeft: '1px solid #E5E5E5',
+            boxShadow: 'none'
+          },
         }}
       >
         {drawer}

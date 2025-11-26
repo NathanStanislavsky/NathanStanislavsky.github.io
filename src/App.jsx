@@ -6,80 +6,145 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-// Create a custom theme
+// Create a minimalistic custom theme
 const theme = createTheme({
   palette: {
+    mode: 'light',
     primary: {
-      main: '#0B735F', // Deep teal
-      light: '#639D75', // Medium sage green
-      dark: '#384166', // Deep blue-gray
+      main: '#000000', // Pure black for contrast
+      light: '#333333',
+      dark: '#000000',
     },
     secondary: {
-      main: '#E3DBA9', // Warm cream
-      light: '#F0EDD1', // Lighter cream
-      dark: '#D4C98A', // Darker cream
+      main: '#666666', // Subtle gray
+      light: '#999999',
+      dark: '#333333',
     },
     background: {
-      default: '#F8F7F2', // Very light cream-tinted white
-      paper: '#FFFFFF',
+      default: '#FFFFFF', // Pure white background
+      paper: '#FAFAFA', // Slight off-white for cards
     },
     text: {
-      primary: '#384166', // Deep blue-gray for main text
-      secondary: '#0B735F', // Deep teal for secondary text
+      primary: '#1A1A1A', // Deep charcoal for excellent readability
+      secondary: '#666666', // Medium gray for secondary text
     },
-    divider: '#E3DBA9', // Warm cream for dividers
+    divider: '#E5E5E5', // Very subtle divider
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Inter", "Helvetica Neue", "Arial", sans-serif',
     h1: {
-      color: '#384166',
       fontWeight: 700,
+      fontSize: '3.5rem',
+      letterSpacing: '-0.02em',
+      lineHeight: 1.2,
     },
     h2: {
-      color: '#384166',
       fontWeight: 600,
+      fontSize: '2.5rem',
+      letterSpacing: '-0.01em',
+      lineHeight: 1.3,
     },
     h3: {
-      color: '#384166',
       fontWeight: 600,
+      fontSize: '2rem',
+      letterSpacing: '-0.01em',
+      lineHeight: 1.4,
     },
     h4: {
-      color: '#384166',
-      fontWeight: 500,
+      fontWeight: 600,
+      fontSize: '1.5rem',
+      letterSpacing: '0em',
+      lineHeight: 1.4,
     },
     h5: {
-      color: '#0B735F',
       fontWeight: 500,
+      fontSize: '1.25rem',
+      letterSpacing: '0em',
+      lineHeight: 1.5,
     },
     h6: {
-      color: '#0B735F',
       fontWeight: 500,
+      fontSize: '1rem',
+      letterSpacing: '0.01em',
+      lineHeight: 1.5,
+    },
+    body1: {
+      fontSize: '1rem',
+      lineHeight: 1.7,
+      letterSpacing: '0.01em',
+    },
+    body2: {
+      fontSize: '0.875rem',
+      lineHeight: 1.6,
+      letterSpacing: '0.01em',
     },
   },
+  spacing: 8,
+  shape: {
+    borderRadius: 0, // Sharp, clean edges
+  },
+  shadows: [
+    'none',
+    '0 1px 3px rgba(0,0,0,0.05)',
+    '0 2px 6px rgba(0,0,0,0.05)',
+    '0 4px 12px rgba(0,0,0,0.05)',
+    '0 8px 24px rgba(0,0,0,0.05)',
+    '0 16px 48px rgba(0,0,0,0.05)',
+    '0 24px 64px rgba(0,0,0,0.05)',
+    '0 32px 80px rgba(0,0,0,0.05)',
+    '0 40px 96px rgba(0,0,0,0.05)',
+    '0 48px 112px rgba(0,0,0,0.05)',
+    '0 56px 128px rgba(0,0,0,0.05)',
+    '0 64px 144px rgba(0,0,0,0.05)',
+    '0 72px 160px rgba(0,0,0,0.05)',
+    '0 80px 176px rgba(0,0,0,0.05)',
+    '0 88px 192px rgba(0,0,0,0.05)',
+    '0 96px 208px rgba(0,0,0,0.05)',
+    '0 104px 224px rgba(0,0,0,0.05)',
+    '0 112px 240px rgba(0,0,0,0.05)',
+    '0 120px 256px rgba(0,0,0,0.05)',
+    '0 128px 272px rgba(0,0,0,0.05)',
+    '0 136px 288px rgba(0,0,0,0.05)',
+    '0 144px 304px rgba(0,0,0,0.05)',
+    '0 152px 320px rgba(0,0,0,0.05)',
+    '0 160px 336px rgba(0,0,0,0.05)',
+  ],
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderRadius: 8,
+          borderRadius: 0,
+          fontWeight: 500,
+          padding: '10px 24px',
+          transition: 'all 0.2s ease-in-out',
           '&:hover': {
-            transform: 'translateY(-2px)',
-            boxShadow: '0 4px 12px rgba(11, 115, 95, 0.3)',
+            transform: 'translateY(-1px)',
           },
         },
         contained: {
-          backgroundColor: '#0B735F',
+          backgroundColor: '#000000',
           color: '#FFFFFF',
+          boxShadow: 'none',
           '&:hover': {
-            backgroundColor: '#384166',
+            backgroundColor: '#1A1A1A',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
           },
         },
         outlined: {
-          borderColor: '#639D75',
-          color: '#639D75',
+          borderColor: '#1A1A1A',
+          borderWidth: '1.5px',
+          color: '#1A1A1A',
           '&:hover': {
-            backgroundColor: 'rgba(99, 157, 117, 0.1)',
-            borderColor: '#0B735F',
+            backgroundColor: '#FAFAFA',
+            borderColor: '#000000',
+            borderWidth: '1.5px',
+          },
+        },
+        text: {
+          color: '#1A1A1A',
+          '&:hover': {
+            backgroundColor: '#FAFAFA',
           },
         },
       },
@@ -87,11 +152,13 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 16,
-          border: '1px solid #E3DBA9',
+          borderRadius: 0,
+          border: 'none',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+          transition: 'all 0.3s ease-in-out',
           '&:hover': {
-            boxShadow: '0 8px 24px rgba(11, 115, 95, 0.15)',
-            transform: 'translateY(-4px)',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+            transform: 'translateY(-2px)',
           },
         },
       },
@@ -99,41 +166,76 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 16,
-          border: '1px solid #E3DBA9',
+          borderRadius: 0,
+          border: 'none',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+        },
+        elevation1: {
+          boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+        },
+        elevation2: {
+          boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+        },
+        elevation3: {
+          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
         },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#0B735F',
-          boxShadow: '0 2px 8px rgba(11, 115, 95, 0.2)',
-          borderRadius: 0,
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+          borderBottom: '1px solid #E5E5E5',
+          color: '#1A1A1A',
         },
       },
     },
     MuiChip: {
       styleOverrides: {
         root: {
-          backgroundColor: '#F8F7F2',
-          borderColor: '#639D75',
-          color: '#639D75',
+          backgroundColor: '#FAFAFA',
+          border: '1px solid #E5E5E5',
+          color: '#666666',
+          borderRadius: 0,
+          fontWeight: 400,
           '&:hover': {
-            backgroundColor: '#639D75',
-            color: '#FFFFFF',
+            backgroundColor: '#F5F5F5',
+            borderColor: '#1A1A1A',
+            color: '#1A1A1A',
           },
         },
         outlined: {
-          borderColor: '#639D75',
-          color: '#639D75',
+          borderColor: '#E5E5E5',
+          color: '#666666',
         },
       },
     },
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: '#E3DBA9',
+          borderColor: '#E5E5E5',
+          borderWidth: '1px',
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: 0,
+            '& fieldset': {
+              borderColor: '#E5E5E5',
+            },
+            '&:hover fieldset': {
+              borderColor: '#1A1A1A',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#1A1A1A',
+              borderWidth: '1.5px',
+            },
+          },
         },
       },
     },
@@ -163,7 +265,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', bgcolor: 'background.default' }}>
         <Header onSectionChange={handleSectionChange} />
         
         <Box component="main" sx={{ flexGrow: 1 }}>
@@ -173,7 +275,7 @@ function App() {
           </Box>
           
           {/* Experience Section */}
-          <Box id="experience">
+          <Box id="experience" sx={{ bgcolor: 'background.paper' }}>
             <Experience />
           </Box>
           

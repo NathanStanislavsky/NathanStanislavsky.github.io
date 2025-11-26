@@ -3,11 +3,8 @@ import {
   Box,
   Container,
   Typography,
-  Paper,
-  Chip,
-  Grid
+  Chip
 } from '@mui/material';
-import { Work } from '@mui/icons-material';
 
 const Experience = () => {
   const workExperience = [
@@ -22,61 +19,98 @@ const Experience = () => {
   ];
 
   return (
-    <Box sx={{ py: 8 }}>
-      <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" gutterBottom align="center" sx={{ mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 12 } }}>
+      <Container maxWidth="md">
+        <Typography 
+          variant="h3" 
+          component="h2" 
+          gutterBottom
+          sx={{ 
+            mb: { xs: 6, md: 8 },
+            fontSize: { xs: '1.75rem', sm: '2rem' }
+          }}
+        >
           Experience
         </Typography>
 
-        <Box sx={{ mb: 6 }}>
-          <Grid container spacing={3}>
-            {workExperience.map((job, index) => (
-              <Grid item xs={12} key={index}>
-                <Paper elevation={2} sx={{ p: 4 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
-                    <Box
-                      sx={{
-                        backgroundColor: 'primary.main',
-                        borderRadius: '50%',
-                        p: 1.5,
-                        mr: 3,
-                        color: 'white'
-                      }}
-                    >
-                      <Work />
-                    </Box>
-                    <Box sx={{ flexGrow: 1 }}>
-                      <Typography variant="h5" component="h3" gutterBottom>
-                        {job.title}
-                      </Typography>
-                      <Typography variant="h6" color="primary" gutterBottom>
-                        {job.company}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary" gutterBottom>
-                        {job.period} • {job.location}
-                      </Typography>
-                    </Box>
-                  </Box>
-                  
-                  <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-                    {job.description}
-                  </Typography>
-                  
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                    {job.technologies.map((tech) => (
-                      <Chip
-                        key={tech}
-                        label={tech}
-                        size="small"
-                        variant="outlined"
-                        color="secondary"
-                      />
-                    ))}
-                  </Box>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
+        <Box>
+          {workExperience.map((job, index) => (
+            <Box 
+              key={index}
+              sx={{ 
+                mb: { xs: 6, md: 8 },
+                pb: { xs: 6, md: 8 },
+                borderBottom: index < workExperience.length - 1 ? '1px solid #E5E5E5' : 'none'
+              }}
+            >
+              <Box sx={{ mb: 3 }}>
+                <Typography 
+                  variant="h4" 
+                  component="h3" 
+                  gutterBottom
+                  sx={{ 
+                    mb: 1,
+                    fontSize: { xs: '1.5rem', sm: '1.75rem' },
+                    fontWeight: 600
+                  }}
+                >
+                  {job.title}
+                </Typography>
+                <Typography 
+                  variant="h6" 
+                  color="text.secondary" 
+                  gutterBottom
+                  sx={{ 
+                    mb: 1,
+                    fontWeight: 400,
+                    fontSize: '1rem'
+                  }}
+                >
+                  {job.company}
+                </Typography>
+                <Typography 
+                  variant="body2" 
+                  color="text.secondary"
+                  sx={{ fontSize: '0.875rem' }}
+                >
+                  {job.period} • {job.location}
+                </Typography>
+              </Box>
+              
+              <Typography 
+                variant="body1" 
+                paragraph
+                sx={{ 
+                  mb: 4,
+                  fontSize: '1.0625rem',
+                  lineHeight: 1.8,
+                  color: 'text.primary'
+                }}
+              >
+                {job.description}
+              </Typography>
+              
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                {job.technologies.map((tech) => (
+                  <Chip
+                    key={tech}
+                    label={tech}
+                    size="small"
+                    variant="outlined"
+                    sx={{
+                      fontSize: '0.8125rem',
+                      height: '28px',
+                      '&:hover': {
+                        borderColor: 'text.primary',
+                        color: 'text.primary',
+                        backgroundColor: 'transparent',
+                      },
+                    }}
+                  />
+                ))}
+              </Box>
+            </Box>
+          ))}
         </Box>
       </Container>
     </Box>

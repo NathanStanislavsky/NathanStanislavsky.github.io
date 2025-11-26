@@ -3,26 +3,20 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardActions,
-  CardMedia,
   Button,
-  Chip,
-  Paper,
-  useTheme
+  Chip
 } from '@mui/material';
-import { GitHub, Launch, Code } from '@mui/icons-material';
+import { GitHub, Launch } from '@mui/icons-material';
+import PantryChefImage from '../../public/PantryChefImage.png';
+import ChessImage from '../../public/ChessImage.png';
 
 const Projects = () => {
-  const theme = useTheme();
 
   const projects = [
     {
       title: 'PantryChef',
       description: 'A user-authenticated web application with semantic, ingredient-based search of over 200,000+ recipes using MongoDB Atlas Search. Built a collaborative filtering recommender using SVD and an HNSW index to serve personalized results in under 100ms. Developed a resilient, multi-service backend by deploying the recommendation model as a distinct Python FastAPI microservice on Google Cloud Run.',
-      image: '../../public/PantryChefImage.png',
+      image: PantryChefImage,
       technologies: ['SvelteKit', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Google Cloud', 'MongoDB Atlas Search', 'FastAPI', 'MLOps'],
       github: 'https://github.com/NathanStanislavsky/RecipeSearch',
       live: 'https://recipe-search-psi.vercel.app/',
@@ -31,7 +25,7 @@ const Projects = () => {
     {
       title: 'Chess Engine',
       description: 'Designed and developed a high-performance chess engine using bitboards capable of calculating 8,000,000 positions/s. Implemented Minimax and Alpha-Beta Pruning algorithms to optimize best move search. Developed advanced features including Transposition hash table, move-ordering, and Quiescence search to improve best move search accuracy.',
-      image: '../../public/ChessImage.png',
+      image: ChessImage,
       technologies: ['C', 'C++', 'Git', 'Bitboards', 'Minimax Algorithm', 'Alpha-Beta Pruning', 'Transposition Tables'],
       github: 'https://github.com/NathanStanislavsky/bitboard',
       live: null,
@@ -46,137 +40,165 @@ const Projects = () => {
   };
 
   return (
-    <Box sx={{ py: 8 }}>
-      <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" gutterBottom align="center" sx={{ mb: 6 }}>
-          Featured Projects
+    <Box sx={{ py: { xs: 6, md: 12 } }}>
+      <Container maxWidth="md">
+        <Typography 
+          variant="h3" 
+          component="h2" 
+          gutterBottom
+          sx={{ 
+            mb: { xs: 6, md: 8 },
+            fontSize: { xs: '1.75rem', sm: '2rem' }
+          }}
+        >
+          Projects
         </Typography>
 
-        <Grid container spacing={3} justifyContent="center">
+        <Box>
           {projects.map((project, index) => (
-            <Grid item xs={12} md={6} key={index}>
-              <Card 
-                elevation={3} 
-                sx={{ 
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  maxWidth: '550px',
-                  mx: 'auto',
-                  transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+            <Box 
+              key={index}
+              sx={{ 
+                mb: { xs: 8, md: 12 },
+                pb: { xs: 8, md: 12 },
+                borderBottom: index < projects.length - 1 ? '1px solid #E5E5E5' : 'none'
+              }}
+            >
+              <Box
+                component="img"
+                src={project.image}
+                alt={project.title}
+                sx={{
+                  width: '100%',
+                  height: { xs: 200, sm: 300 },
+                  objectFit: 'cover',
+                  mb: 4,
+                  display: 'block',
+                  filter: 'grayscale(100%)',
+                  transition: 'filter 0.3s ease-in-out',
                   '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: theme.shadows[8]
-                  }
+                    filter: 'grayscale(0%)',
+                  },
                 }}
-              >
-                <CardMedia
-                  component="img"
-                  height="250"
-                  image={project.image}
-                  alt={project.title}
-                  sx={{ objectFit: 'cover' }}
-                />
+              />
+              
+              <Box sx={{ mb: 3 }}>
+                <Typography 
+                  variant="h4" 
+                  component="h3" 
+                  gutterBottom
+                  sx={{ 
+                    mb: 2,
+                    fontSize: { xs: '1.5rem', sm: '1.75rem' },
+                    fontWeight: 600
+                  }}
+                >
+                  {project.title}
+                </Typography>
                 
-                <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: 3 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                    <Typography variant="h6" component="h3" gutterBottom sx={{ flexGrow: 1 }}>
-                      {project.title}
-                    </Typography>
-                    {project.featured && (
-                      <Chip 
-                        label="Featured" 
-                        size="small" 
-                        color="primary" 
-                        variant="filled"
-                        icon={<Code />}
-                      />
-                    )}
-                  </Box>
-                  
-                  <Typography variant="body2" color="text.secondary" paragraph sx={{ flexGrow: 1, mb: 2 }}>
-                    {project.description}
-                  </Typography>
-                  
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
-                    {project.technologies.slice(0, 6).map((tech) => (
-                      <Chip
-                        key={tech}
-                        label={tech}
-                        size="small"
-                        variant="outlined"
-                        color="secondary"
-                      />
-                    ))}
-                  </Box>
-                </CardContent>
+                <Typography 
+                  variant="body1" 
+                  color="text.primary" 
+                  paragraph
+                  sx={{ 
+                    mb: 4,
+                    fontSize: '1.0625rem',
+                    lineHeight: 1.8
+                  }}
+                >
+                  {project.description}
+                </Typography>
                 
-                <CardActions sx={{ justifyContent: 'space-between', px: 3, pb: 3 }}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 4 }}>
+                  {project.technologies.slice(0, 8).map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      size="small"
+                      variant="outlined"
+                      sx={{
+                        fontSize: '0.8125rem',
+                        height: '28px',
+                        '&:hover': {
+                          borderColor: 'text.primary',
+                          color: 'text.primary',
+                          backgroundColor: 'transparent',
+                        },
+                      }}
+                    />
+                  ))}
+                </Box>
+              </Box>
+              
+              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                {project.github && (
                   <Button
-                    size="small"
+                    variant="outlined"
                     startIcon={<GitHub />}
                     onClick={() => handleProjectClick(project.github)}
-                    disabled={!project.github}
+                    sx={{
+                      fontSize: '0.9375rem',
+                      textTransform: 'none',
+                    }}
                   >
                     View Code
                   </Button>
-                  
-                  {project.live && (
-                    <Button
-                      size="small"
-                      startIcon={<Launch />}
-                      onClick={() => handleProjectClick(project.live)}
-                      color="primary"
-                    >
-                      Live Demo
-                    </Button>
-                  )}
-                </CardActions>
-              </Card>
-            </Grid>
+                )}
+                
+                {project.live && (
+                  <Button
+                    variant="contained"
+                    startIcon={<Launch />}
+                    onClick={() => handleProjectClick(project.live)}
+                    sx={{
+                      fontSize: '0.9375rem',
+                      textTransform: 'none',
+                    }}
+                  >
+                    Live Demo
+                  </Button>
+                )}
+              </Box>
+            </Box>
           ))}
-        </Grid>
+        </Box>
 
         {/* Skills Section */}
-        <Box sx={{ mt: 8 }}>
-          <Typography variant="h4" gutterBottom align="center" sx={{ mb: 3 }}>
+        <Box sx={{ mt: { xs: 8, md: 12 }, pt: { xs: 8, md: 12 }, borderTop: '1px solid #E5E5E5' }}>
+          <Typography 
+            variant="h3" 
+            gutterBottom
+            sx={{ 
+              mb: 4,
+              fontSize: { xs: '1.75rem', sm: '2rem' }
+            }}
+          >
             Technical Skills
           </Typography>
-          <Paper elevation={2} sx={{ p: 4, position: 'relative', overflow: 'hidden' }}>
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                height: '4px',
-                background: 'linear-gradient(90deg, #384166, #0B735F, #639D75)',
-              }}
-            />
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
-              {[
-                'Java', 'Python', 'C/C++', 'JavaScript', 'TypeScript', 'HTML/CSS', 'x86 Assembly',
-                'SvelteKit', 'React', 'Node.js', 'Tailwind', 'Pandas', 'NumPy', 'scikit-surprise',
-                'FastAPI', 'FAISS', 'PyMongo', 'Google Cloud SDK', 'MongoDB', 'PostgreSQL',
-                'Prisma ORM', 'Drizzle ORM', 'Git', 'Docker', 'Vercel', 'Sanity CMS'
-              ].map((skill) => (
-                <Chip
-                  key={skill}
-                  label={skill}
-                  variant="outlined"
-                  color="primary"
-                  size="small"
-                  sx={{
-                    '&:hover': {
-                      backgroundColor: 'primary.main',
-                      color: 'white',
-                      transform: 'translateY(-2px)',
-                    },
-                  }}
-                />
-              ))}
-            </Box>
-          </Paper>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+            {[
+              'Java', 'Python', 'C/C++', 'JavaScript', 'TypeScript', 'HTML/CSS', 'x86 Assembly',
+              'SvelteKit', 'React', 'Node.js', 'Tailwind', 'Pandas', 'NumPy', 'scikit-surprise',
+              'FastAPI', 'FAISS', 'PyMongo', 'Google Cloud SDK', 'MongoDB', 'PostgreSQL',
+              'Prisma ORM', 'Drizzle ORM', 'Git', 'Docker', 'Vercel', 'Sanity CMS'
+            ].map((skill) => (
+              <Chip
+                key={skill}
+                label={skill}
+                variant="outlined"
+                size="small"
+                sx={{
+                  fontSize: '0.8125rem',
+                  height: '28px',
+                  '&:hover': {
+                    borderColor: 'text.primary',
+                    color: 'text.primary',
+                    backgroundColor: 'transparent',
+                  },
+                }}
+              />
+            ))}
+          </Box>
         </Box>
       </Container>
     </Box>

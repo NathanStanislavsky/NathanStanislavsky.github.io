@@ -3,170 +3,208 @@ import {
   Box,
   Container,
   Typography,
-  Paper,
   Grid,
-  Avatar,
-  Chip,
-  Divider
+  Chip
 } from '@mui/material';
-import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 import NathanImage from '../../public/NathanImage.png';
 
 const About = () => {
 
   return (
-    <Box sx={{ py: 8 }}>
-      <Container maxWidth="lg">
+    <Box sx={{ py: { xs: 6, md: 12 } }}>
+      <Container maxWidth="md">
         {/* Hero Section */}
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
+        <Box sx={{ textAlign: 'center', mb: { xs: 8, md: 12 } }}>
           <Box
             component="img"
             src={NathanImage}
             alt="Nathan Stanislavsky"
             sx={{
-              width: 150,
-              height: 150,
+              width: { xs: 120, sm: 140 },
+              height: { xs: 120, sm: 140 },
               mx: 'auto',
-              mb: 3,
-              borderRadius: '50%',
+              mb: 4,
+              borderRadius: 0,
               objectFit: 'cover',
-              border: '4px solid #E3DBA9',
-              boxShadow: '0 8px 32px rgba(11, 115, 95, 0.3)',
+              display: 'block',
+              filter: 'grayscale(100%)',
+              transition: 'filter 0.3s ease-in-out',
               '&:hover': {
-                transform: 'scale(1.05)',
-                boxShadow: '0 12px 40px rgba(11, 115, 95, 0.4)',
+                filter: 'grayscale(0%)',
               },
             }}
           />
-          <Typography variant="h2" component="h1" gutterBottom>
+          <Typography 
+            variant="h1" 
+            component="h1" 
+            gutterBottom
+            sx={{ 
+              mb: 2,
+              fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' }
+            }}
+          >
             Nathan Stanislavsky
           </Typography>
-          <Typography variant="h5" color="text.secondary" gutterBottom>
+          <Typography 
+            variant="h5" 
+            color="text.secondary" 
+            gutterBottom
+            sx={{ 
+              mb: 4,
+              fontWeight: 400,
+              fontSize: { xs: '1rem', sm: '1.125rem' }
+            }}
+          >
             Software Engineer & Full-Stack Developer
           </Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto', mb: 4 }}>
-            Passionate software engineer with expertise in full-stack development, and system architecture. 
+          <Typography 
+            variant="body1" 
+            color="text.secondary" 
+            sx={{ 
+              maxWidth: '600px', 
+              mx: 'auto', 
+              mb: 6,
+              fontSize: '1.0625rem',
+              lineHeight: 1.8
+            }}
+          >
+            Passionate software engineer with expertise in full-stack development and system architecture. 
             Currently pursuing a B.A. in Math and Computer Science at Boston University with a strong focus on building scalable applications.
           </Typography>
           
           {/* Contact Info */}
-          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 4, flexWrap: 'wrap' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1.5, flexWrap: 'wrap' }}>
             <Chip
-              icon={<Email />}
-              label="nathan.stanislavsky16@gmail.com"
+              icon={<Email sx={{ fontSize: '1rem' }} />}
+              label="Email"
               clickable
               variant="outlined"
               onClick={() => window.open('mailto:nathan.stanislavsky16@gmail.com', '_blank')}
               sx={{
+                fontSize: '0.875rem',
+                height: '36px',
                 '&:hover': {
-                  backgroundColor: 'primary.main',
-                  color: 'white',
-                  transform: 'translateY(-2px)',
+                  borderColor: 'text.primary',
+                  color: 'text.primary',
+                  backgroundColor: 'transparent',
                 },
               }}
             />
             <Chip
-              icon={<GitHub />}
-              label="github/NathanStanislavsky"
+              icon={<GitHub sx={{ fontSize: '1rem' }} />}
+              label="GitHub"
               clickable
               variant="outlined"
               onClick={() => window.open('https://github.com/NathanStanislavsky', '_blank')}
               sx={{
+                fontSize: '0.875rem',
+                height: '36px',
                 '&:hover': {
-                  backgroundColor: 'primary.main',
-                  color: 'white',
-                  transform: 'translateY(-2px)',
+                  borderColor: 'text.primary',
+                  color: 'text.primary',
+                  backgroundColor: 'transparent',
                 },
               }}
             />
             <Chip
-              icon={<LinkedIn />}
+              icon={<LinkedIn sx={{ fontSize: '1rem' }} />}
               label="LinkedIn"
               clickable
               variant="outlined"
               onClick={() => window.open('https://www.linkedin.com/in/nathan-stanislavsky/', '_blank')}
               sx={{
+                fontSize: '0.875rem',
+                height: '36px',
                 '&:hover': {
-                  backgroundColor: 'primary.main',
-                  color: 'white',
-                  transform: 'translateY(-2px)',
+                  borderColor: 'text.primary',
+                  color: 'text.primary',
+                  backgroundColor: 'transparent',
                 },
               }}
             />
           </Box>
         </Box>
 
-        <Divider sx={{ my: 4 }} />
-
         {/* About Content */}
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
-            <Paper elevation={2} sx={{ p: 4, height: '100%', position: 'relative', overflow: 'hidden' }}>
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: 'linear-gradient(90deg, #384166, #0B735F, #639D75)',
+        <Grid container spacing={{ xs: 4, md: 6 }}>
+          <Grid item xs={12}>
+            <Box sx={{ mb: 6 }}>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{ 
+                  mb: 3,
+                  fontSize: { xs: '1.75rem', sm: '2rem' }
                 }}
-              />
-              <Typography variant="h4" gutterBottom>
-                About Me
+              >
+                About
               </Typography>
-              <Typography variant="body1" paragraph>
+              <Typography variant="body1" paragraph sx={{ mb: 3, fontSize: '1.0625rem', lineHeight: 1.8 }}>
                 I'm a dedicated software engineer currently pursuing my B.A. in Math and Computer Science at Boston University, 
                 maintaining a 3.79 GPA and earning Dean's List recognition. My passion lies in building robust, scalable applications 
                 and solving complex challenges.
               </Typography>
-              <Typography variant="body1" paragraph>
+              <Typography variant="body1" paragraph sx={{ mb: 3, fontSize: '1.0625rem', lineHeight: 1.8 }}>
                 I'm actively involved in the tech community as a Software Engineer at Hack4Impact and a Junior Quantitative Developer 
                 at BUAlpha. When I'm not coding, you can find me playing chess or at the gym.
               </Typography>
-              <Typography variant="body1" paragraph>
+              <Typography variant="body1" sx={{ fontSize: '1.0625rem', lineHeight: 1.8 }}>
                 I believe in writing clean, maintainable code and following best practices like Test-Driven Development. My goal is 
                 to create software that not only solves problems efficiently but also provides an excellent user experience.
               </Typography>
-            </Paper>
+            </Box>
           </Grid>
           
-          <Grid item xs={12} md={6}>
-            <Paper elevation={2} sx={{ p: 4, height: '100%', position: 'relative', overflow: 'hidden' }}>
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: 'linear-gradient(90deg, #384166, #0B735F, #639D75)',
+          <Grid item xs={12}>
+            <Box>
+              <Typography 
+                variant="h3" 
+                gutterBottom
+                sx={{ 
+                  mb: 3,
+                  fontSize: { xs: '1.75rem', sm: '2rem' }
                 }}
-              />
-              <Typography variant="h4" gutterBottom>
+              >
                 Education
               </Typography>
-              <Typography variant="h6" gutterBottom>
+              <Typography 
+                variant="h5" 
+                gutterBottom
+                sx={{ 
+                  mb: 1,
+                  fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                  fontWeight: 600
+                }}
+              >
                 Boston University
               </Typography>
-              <Typography variant="subtitle1" color="primary" gutterBottom>
+              <Typography 
+                variant="body1" 
+                color="text.secondary" 
+                gutterBottom
+                sx={{ mb: 2 }}
+              >
                 B.A. Math and Computer Science
               </Typography>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                gutterBottom
+                sx={{ mb: 3 }}
+              >
                 GPA: 3.79 | Dean's List | Expected May 2028
               </Typography>
-              <Typography variant="body2" paragraph>
+              <Typography variant="body2" paragraph sx={{ mb: 2, lineHeight: 1.7 }}>
                 <strong>Relevant Coursework:</strong> Data Structures and Algorithms, Combinatoric Structures, 
                 Computer Systems, Linear Algebra, Multivariate Calculus
               </Typography>
-              <Typography variant="body2">
+              <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
                 <strong>Activities & Clubs:</strong> Software Engineer at Hack4Impact, Junior Quantitative Developer at BUAlpha, Chess Club
               </Typography>
-            </Paper>
+            </Box>
           </Grid>
         </Grid>
-
-
       </Container>
     </Box>
   );

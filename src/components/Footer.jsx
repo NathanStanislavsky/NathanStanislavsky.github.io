@@ -3,28 +3,28 @@ import {
   Box,
   Container,
   Typography,
-  IconButton,
-  Divider,
-  useTheme
+  IconButton
 } from '@mui/material';
-import { GitHub, Email } from '@mui/icons-material';
+import { GitHub, Email, LinkedIn } from '@mui/icons-material';
 
 const Footer = () => {
-  const theme = useTheme();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
       icon: <GitHub />,
       label: 'GitHub',
-      url: 'https://github.com/NathanStanislavsky',
-      color: '#333'
+      url: 'https://github.com/NathanStanislavsky'
+    },
+    {
+      icon: <LinkedIn />,
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/nathan-stanislavsky/'
     },
     {
       icon: <Email />,
       label: 'Email',
-      url: 'mailto:nathan.stanislavsky16@gmail.com',
-      color: '#d32f2f'
+      url: 'mailto:nathan.stanislavsky16@gmail.com'
     }
   ];
 
@@ -32,30 +32,29 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'background.paper',
-        borderTop: `1px solid ${theme.palette.divider}`,
-        py: 4,
+        bgcolor: 'background.default',
+        borderTop: '1px solid #E5E5E5',
+        py: { xs: 4, md: 5 },
         mt: 'auto'
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Box sx={{ textAlign: 'center' }}>
           {/* Social Links */}
           <Box sx={{ mb: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              Connect With Me
-            </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1.5 }}>
               {socialLinks.map((social, index) => (
                 <IconButton
                   key={index}
                   onClick={() => window.open(social.url, '_blank')}
                   sx={{
-                    color: social.color,
+                    color: 'text.secondary',
                     '&:hover': {
-                      transform: 'scale(1.1)',
-                      transition: 'transform 0.2s ease-in-out'
-                    }
+                      color: 'text.primary',
+                      backgroundColor: 'transparent',
+                      transform: 'translateY(-2px)',
+                    },
+                    transition: 'all 0.2s ease-in-out'
                   }}
                   aria-label={social.label}
                 >
@@ -65,11 +64,13 @@ const Footer = () => {
             </Box>
           </Box>
 
-          <Divider sx={{ my: 2 }} />
-
           {/* Copyright */}
-          <Typography variant="body2" color="text.secondary">
-            © {currentYear} Nathan Stanislavsky. All rights reserved.
+          <Typography 
+            variant="body2" 
+            color="text.secondary"
+            sx={{ fontSize: '0.875rem' }}
+          >
+            © {currentYear} Nathan Stanislavsky
           </Typography>
         </Box>
       </Container>
