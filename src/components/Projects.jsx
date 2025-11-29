@@ -181,10 +181,9 @@ const Projects = () => {
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
             {[
-              'Java', 'Python', 'C/C++', 'JavaScript', 'TypeScript', 'HTML/CSS', 'x86 Assembly',
-              'SvelteKit', 'React', 'Node.js', 'Tailwind', 'Pandas', 'NumPy',
-              'FastAPI', 'FAISS', 'MongoDB', 'PostgreSQL',
-              'Prisma ORM', 'Drizzle ORM', 'Git', 'Docker', 'Vercel', 'Sanity CMS'
+              'TypeScript', 'Node.js', 'JavaScript', 'PostgreSQL', 'Python', 'Docker', 'Google Cloud Platform', 'CockroachDB', 'Java', 'C/C++', 'HTML/CSS', 'FastAPI',
+              'SvelteKit', 'React', 'Tailwind', 'Pandas', 'NumPy',
+              'MongoDB', 'Prisma ORM', 'Drizzle ORM', 'Git', 'Vercel', 'Sanity CMS', 'x86 Assembly',
             ].map((skill) => (
               <Chip
                 key={skill}
