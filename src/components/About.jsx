@@ -226,7 +226,7 @@ const About = () => {
                 gutterBottom
                 sx={{ mb: 2, fontSize: "0.875rem" }}
               >
-                GPA: 3.79 | Dean's List | Expected graduation May 2027
+                GPA: 3.74 | Dean's List | Expected graduation May 2027
               </Typography>
               <Typography
                 variant="body2"
