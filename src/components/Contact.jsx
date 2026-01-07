@@ -12,7 +12,6 @@ import {
   IconButton,
   Snackbar,
   Alert,
-  useTheme
 } from '@mui/material';
 import {
   Email,
@@ -23,7 +22,6 @@ import {
 } from '@mui/icons-material';
 
 const Contact = () => {
-  const theme = useTheme();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -267,7 +265,7 @@ const Contact = () => {
             Let's Work Together
           </Typography>
           <Typography variant="body1" color="text.secondary" paragraph>
-            I'm currently available for internship opportunities and full-time positions after graduation. 
+            I'm currently available for internship opportunities. 
             Whether you have a project in mind or just want to chat, I'd love to hear from you.
           </Typography>
         </Box>

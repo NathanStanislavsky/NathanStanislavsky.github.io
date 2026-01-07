@@ -57,7 +57,7 @@ const About = () => {
               fontSize: { xs: "0.9375rem", sm: "1rem" },
             }}
           >
-            Software Engineer & Full-Stack Developer
+            Software Engineer & Backend Developer
           </Typography>
           <Typography
             variant="body1"
@@ -70,7 +70,7 @@ const About = () => {
               lineHeight: 1.6,
             }}
           >
-            Passionate software engineer with expertise in full-stack
+            Passionate software engineer with experience in backend
             development and data driven applications.
           </Typography>
 
@@ -174,8 +174,7 @@ const About = () => {
                 sx={{ mb: 2, fontSize: "1rem", lineHeight: 1.6 }}
               >
                 Currently, I am driving social impact as a Software Engineer at
-                Hack4Impact and developing PantryChef, a nutrition-focused
-                recipe platform for health-conscious users.
+                Hack4Impact and developing a key-value storage engine in C++.
               </Typography>
               <Typography
                 variant="body1"
@@ -234,9 +233,8 @@ const About = () => {
                 paragraph
                 sx={{ mb: 1.5, lineHeight: 1.6, fontSize: "0.875rem" }}
               >
-                <strong>Relevant Coursework:</strong> Data Structures and
-                Algorithms, Databases, Computer Systems, Linear Algebra,
-                Multivariate Calculus, Probability
+                <strong>Relevant Coursework:</strong> Distributed Systems, Time Series & Forecasting, Algorithms, Computer Systems,
+Databases, Data Structures, Linear Algebra, Multivariate Calculus, Probability
               </Typography>
               <Typography
                 variant="body2"

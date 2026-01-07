@@ -13,32 +13,45 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Key-Value Storage Engine',
+      description: 'Engineered a high-throughput LSM-tree database engine capable of sustaining 11,000+ writes/second by utilizing sequential disk I/O and a custom Write-Ahead Log (WAL). Implemented a thread-safe MemTable to handle concurrent operations, ensuring data integrity under high-load benchmarks. Designed an automated flushing mechanism that serializes in-memory data to immutable SSTables on disk when capacity thresholds are met, ensuring data persistence.',
+      technologies: ['C++', 'Git'],
+      github: 'https://github.com/NathanStanislavsky/KeyValueStore',
+      live: null,
+      featured: true,
+    },
+    {
+      title: 'Memex',
+      description: 'Architected an event-driven document search engine, utilizing RabbitMQ to decouple ingestion from Elasticsearch indexing and ensuring statelessness via S3/MinIO object storage. Provisioned AWS EC2 environments via Terraform and established a GitHub Actions CI/CD pipeline to enable zero-touch, containerized deployments. Orchestrated a microservices fleet via Docker, integrating Prometheus and Grafana to visualize request latency and RabbitMQ message throughput, enabling real-time bottleneck detection.',
+      technologies: ['Java', 'Spring Boot', 'Terraform', 'AWS', 'Docker', 'RabbitMQ', 'ElasticSearch'],
+      github: 'https://github.com/NathanStanislavsky/Memex',
+      live: null,
+      featured: true,
+    },
+    {
       title: 'PantryChef',
-      description: 'A scalable, cloud-native recipe search platform featuring a microservice backend on Google Cloud Platform. The system utilizes a hybrid machine learning engine that integrates SVD batch models with real-time SGD updates to give user real-time recipe recommendations. It features a centralized vector search database in PostgreSQL to perform low-latency similarity searches across 200,000+ recipes.',
-      image: `${import.meta.env.BASE_URL}PantryChefImage.png`,
+      description: 'Built an event-driven backend for a recipe personalization engine, utilizing Google Pub/Sub and Cloud Run to ingest and process user interaction streams with sub-100ms latency. Optimized cosine similarity search across 200,000+ embeddings leveraging PostgreSQL HNSW indices, achieving sub-second latency for culinary recommendations fetching. Implemented stateless authentication using JWTs (JSON Web Tokens) to secure API endpoints, ensuring scalable session management across the event-driven architecture.',
       technologies: ['SvelteKit', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Google Cloud', 'MongoDB Atlas Search', 'FastAPI', 'MLOps'],
       github: 'https://github.com/NathanStanislavsky/RecipeSearch',
       live: 'https://recipe-search-psi.vercel.app/',
       featured: true,
     },
     {
+      title: 'Chess Engine',
+      description: 'A high-performance C++ chess engine based on bitboard data structures, capable of calculating 8,000,000 positions per second. It implements Minimax and Alpha-Beta Pruning algorithms to cut search time by 75% , utilizing Transposition tables and Quiescence search to identify optimal moves efficiently.',
+      technologies: ['C', 'C++', 'Git', 'Bitboards', 'Minimax Algorithm', 'Alpha-Beta Pruning', 'Transposition Tables'],
+      github: 'https://github.com/NathanStanislavsky/bitboard',
+      live: null,
+      featured: true,
+    },
+    {
       title: 'PlanEdu',
       description: 'I worked on a team of four to build an AI-powered course-planning platform featuring a swiping-style discovery UI and automated transcript parsing which won 3rd place at the BU DS+X hackathon. We engineered a recommendation engine using OpenAI embeddings and a schedule optimizer with Google OR-Tools to handle prerequisites and time conflicts.',
-      image: `${import.meta.env.BASE_URL}planedu.png`,
       technologies: ['React', 'Node.js', 'Express', 'Python', 'PostgreSQL'],
       github: 'https://github.com/NathanStanislavsky/DSXBU',
       live: null,
       featured: true,
     },
-    {
-      title: 'Chess Engine',
-      description: 'A high-performance C++ chess engine based on bitboard data structures, capable of calculating 8,000,000 positions per second. It implements Minimax and Alpha-Beta Pruning algorithms to cut search time by 75% , utilizing Transposition tables and Quiescence search to identify optimal moves efficiently.',
-      image: `${import.meta.env.BASE_URL}ChessImage.png`,
-      technologies: ['C', 'C++', 'Git', 'Bitboards', 'Minimax Algorithm', 'Alpha-Beta Pruning', 'Transposition Tables'],
-      github: 'https://github.com/NathanStanislavsky/bitboard',
-      live: null,
-      featured: true,
-    }
   ];
 
   const handleProjectClick = (url) => {
@@ -67,27 +80,6 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Grid size={{ xs: 12, md: 6 }} key={index}>
               <Box>
-                <Box
-                  component="img"
-                  src={project.image}
-                  alt={project.title}
-                  sx={{
-                    width: '100%',
-                    height: { xs: 180, sm: 200 },
-                    objectFit: 'cover',
-                    mb: 3,
-                    display: 'block',
-                    borderRadius: '12px',
-                    border: '2px solid',
-                    borderColor: index % 2 === 0 ? 'primary.main' : 'secondary.main',
-                    transition: 'all 0.3s ease-in-out',
-                    '&:hover': {
-                      transform: 'translateY(-4px)',
-                      boxShadow: '0 8px 24px rgba(139, 111, 71, 0.3)',
-                    },
-                  }}
-                />
-                
                 <Box sx={{ mb: 2 }}>
                   <Typography 
                     variant="h4" 
@@ -181,9 +173,16 @@ const Projects = () => {
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
             {[
-              'TypeScript', 'Node.js', 'JavaScript', 'PostgreSQL', 'Python', 'Docker', 'Google Cloud Platform', 'CockroachDB', 'Java', 'C/C++', 'HTML/CSS', 'FastAPI',
-              'SvelteKit', 'React', 'Tailwind', 'Pandas', 'NumPy',
-              'MongoDB', 'Prisma ORM', 'Drizzle ORM', 'Git', 'Vercel', 'Sanity CMS', 'x86 Assembly',
+              // Backend Languages
+              'Java', 'Python', 'C/C++', 'TypeScript', 'SQL', 'JavaScript',
+              // Backend Frameworks
+              'Spring Boot', 'FastAPI', 'Node.js', 'Pandas', 'NumPy',
+              // Infrastructure & Databases
+              'Terraform', 'RabbitMQ', 'Docker', 'Elasticsearch', 'PostgreSQL', 'MongoDB', 'GCP', 'Git', 'AWS',
+              // Frontend Languages
+              'HTML', 'CSS',
+              // Frontend Frameworks
+              'React', 'SvelteKit',
             ].map((skill) => (
               <Chip
                 key={skill}
