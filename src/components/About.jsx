@@ -4,19 +4,17 @@ function About() {
   return (
     <section id="about" className="about animate-in">
       <div className="container">
-        <h2 className="section-header">§01 about</h2>
+        <h2 className="section-header">01 about</h2>
         <div className="about__content">
           <p className="about__text">
-            I am a software engineer and undergraduate at Boston University,
-            pursuing a joint B.A. in Mathematics and Computer Science. My
-            focus is on engineering robust, scalable applications that
-            address complex technical challenges.
+            I am a backend-focused software engineer and undergraduate student at Boston University,
+            pursuing a Bachelor of Arts in Mathematics and Computer Science. I specialize in building
+            and scaling distributed systems, with internship experience at PayPal and DragonGC.
           </p>
           <p className="about__text">
-            Currently, I am driving social impact as a Software Engineer at
-            Hack4Impact and developing a high-performance key-value storage engine in C++.
-            I prioritize clean, maintainable architecture and adhere to best
-            practices like Test-Driven Development.
+            Proficient in Python, Java, TypeScript, and C++, I have hands-on infrastructure experience
+            across AWS, Docker, Kubernetes, and Terraform. I am passionate about tackling complex backend
+            architectures, database optimizations, and system design challenges.
           </p>
         </div>
       </div>

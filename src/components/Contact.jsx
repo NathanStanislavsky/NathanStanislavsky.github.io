@@ -2,6 +2,11 @@ import './Contact.css'
 
 const links = [
   {
+    label: 'phone',
+    href: 'tel:917-670-8953',
+    text: '917-670-8953',
+  },
+  {
     label: 'email',
     href: 'mailto:nathan.stanislavsky16@gmail.com',
     text: 'nathan.stanislavsky16@gmail.com',
@@ -22,15 +27,15 @@ function Contact() {
   return (
     <section id="contact" className="contact animate-in">
       <div className="container">
-        <h2 className="section-header">§06 contact</h2>
+        <h2 className="section-header">06 contact</h2>
         <div className="contact__links">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
               className="contact__link"
-              target={link.label !== 'email' ? '_blank' : undefined}
-              rel={link.label !== 'email' ? 'noopener noreferrer' : undefined}
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             >
               <span className="contact__label">{link.label}</span>
               <span className="contact__arrow">→</span>

@@ -48,8 +48,8 @@ function App() {
       <Navbar darkMode={darkMode} onToggleDarkMode={() => setDarkMode(!darkMode)} />
       <Hero />
       <About />
-      <Experience />
       <Education />
+      <Experience />
       <Projects />
       <Skills />
       <Contact />

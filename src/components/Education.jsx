@@ -2,21 +2,17 @@ import './Education.css'
 
 const coursework = [
   'Distributed Systems',
-  'Time Series & Forecasting',
-  'Algorithms',
   'Computer Systems',
   'Databases',
+  'Algorithms',
   'Data Structures',
-  'Linear Algebra',
-  'Multivariate Calculus',
-  'Probability',
 ]
 
 function Education() {
   return (
     <section id="education" className="education animate-in">
       <div className="container">
-        <h2 className="section-header">§03 education</h2>
+        <h2 className="section-header">02 education</h2>
         <div className="education__content">
           <div className="education__row">
             <div className="education__info">
@@ -25,7 +21,7 @@ function Education() {
             </div>
             <span className="education__date">Expected May 2027</span>
           </div>
-          <p className="education__meta">GPA: 3.74 · Dean's List</p>
+          <p className="education__meta">GPA: 3.81 · Dean's List</p>
           <div className="education__courses">
             {coursework.map((course) => (
               <span key={course} className="tag">{course}</span>

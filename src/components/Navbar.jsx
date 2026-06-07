@@ -12,12 +12,12 @@ function Navbar({ darkMode, onToggleDarkMode }) {
   }, [])
 
   const links = [
-    { label: '§01 about', href: '#about' },
-    { label: '§02 experience', href: '#experience' },
-    { label: '§03 education', href: '#education' },
-    { label: '§04 projects', href: '#projects' },
-    { label: '§05 skills', href: '#skills' },
-    { label: '§06 contact', href: '#contact' },
+    { label: '01 about', href: '#about' },
+    { label: '02 education', href: '#education' },
+    { label: '03 experience', href: '#experience' },
+    { label: '04 projects', href: '#projects' },
+    { label: '05 skills', href: '#skills' },
+    { label: '06 contact', href: '#contact' },
   ]
 
   return (

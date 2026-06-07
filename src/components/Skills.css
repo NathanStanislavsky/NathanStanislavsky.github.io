@@ -1,6 +1,6 @@
 .skills__groups {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -19,7 +19,14 @@
   gap: 6px;
 }
 
-/* ===== Mobile ===== */
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .skills__groups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
 @media (max-width: 640px) {
   .skills__groups {
     grid-template-columns: 1fr;

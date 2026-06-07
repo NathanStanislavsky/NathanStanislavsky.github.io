@@ -11,16 +11,13 @@ function Hero() {
           </div>
           <div className="hero__right">
             <div className="hero__coord">
-              <span className="hero__coord-label">x:</span>
               <span className="hero__coord-value">Boston University — Math & CS</span>
             </div>
             <div className="hero__coord">
-              <span className="hero__coord-label">y:</span>
-              <span className="hero__coord-value">DragonGC — SWE Intern</span>
+              <span className="hero__coord-value">PayPal / Venmo — Backend Intern</span>
             </div>
             <div className="hero__coord">
-              <span className="hero__coord-label">∂:</span>
-              <span className="hero__coord-value">GPA 3.74</span>
+              <span className="hero__coord-value">GPA 3.81</span>
             </div>
           </div>
         </div>
