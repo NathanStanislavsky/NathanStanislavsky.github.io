@@ -1,0 +1,16 @@
+.about__content {
+  max-width: 640px;
+}
+
+.about__text {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about__text:last-child {
+  margin-bottom: 0;
+}

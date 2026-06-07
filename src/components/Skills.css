@@ -1,0 +1,28 @@
+.skills__groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.skills__category {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+  text-transform: lowercase;
+}
+
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+  .skills__groups {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

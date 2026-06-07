@@ -1,0 +1,62 @@
+.education__content {
+  max-width: 720px;
+}
+
+.education__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.education__school {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.education__degree {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.education__date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.education__meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.education__courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .education__row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .education__date {
+    padding-top: 0;
+  }
+}
