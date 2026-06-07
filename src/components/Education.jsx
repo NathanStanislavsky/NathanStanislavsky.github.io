@@ -6,6 +6,12 @@ const coursework = [
   'Databases',
   'Algorithms',
   'Data Structures',
+  'Probability',
+  'Linear Algebra',
+  'Multivariate Calculus',
+  'Combinatorics',
+  'Concepts of Programming Languages',
+  'Foundations of Data Science'
 ]
 
 function Education() {

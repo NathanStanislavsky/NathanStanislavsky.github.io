@@ -7,7 +7,7 @@ function Hero() {
         <div className="hero__layout">
           <div className="hero__left">
             <h1 className="hero__name">Nathan Stanislavsky</h1>
-            <p className="hero__subtitle">Math · CS · Distributed Systems</p>
+            <p className="hero__subtitle">Math · CS</p>
           </div>
           <div className="hero__right">
             <div className="hero__coord">
